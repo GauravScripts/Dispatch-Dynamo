@@ -1,0 +1,77 @@
+.container {
+    margin: 35px auto;
+    max-width: 800px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.custom-file-input {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-file-label {
+    display: inline-block;
+    background: linear-gradient(to bottom, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    white-space: nowrap;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+    cursor: pointer;
+}
+
+.custom-file-label:hover {
+    border-color: black;
+}
+
+.custom-file-label:active {
+    outline: 0;
+}
+
+.custom-file-label:active::before {
+    background: linear-gradient(to bottom, #e3e3e3, #f9f9f9);
+}
+
+img {
+    min-width: 150px;
+    min-height: 150px;
+    max-width: 300px;
+    max-height: 300px;
+    margin-top: 20px;
+}
+
+.prediction {
+    max-width: 85%;
+    margin: 0;
+}
+
+/* Small screens */
+@media only screen and (max-width: 370px) {
+    .small-screen .custom-file-label {
+        padding: 1px 2px;
+        font-size: 10pt;
+    }
+
+    .small-screen .prediction h1 {
+        font-size: 1.2rem;
+    }
+}

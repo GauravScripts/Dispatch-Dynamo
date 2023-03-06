@@ -1,0 +1,233 @@
+.banner {
+display: flex;
+align-items: center;
+height: 80vh;
+background-image: url(../../assets/1.jpeg);
+background-size: cover;
+background-position: center;
+}
+
+.banner-text {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 50%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+text-align: center;
+}
+
+.banner-text h2 {
+font-size: 36px;
+margin-bottom: 20px;
+}
+
+.banner-text p {
+font-size: 18px;
+margin-bottom: 20px;
+}
+
+.banner-text button {
+padding: 10px 20px;
+font-size: 18px;
+border-radius: 25px;
+border: none;
+background-color: white;
+color: black;
+cursor: pointer;
+outline: none;
+margin-top: 20px;
+}
+
+.services-section {
+padding: 40px;
+text-align: center;
+}
+
+.services-section h2 {
+font-size: 36px;
+margin-bottom: 20px;
+}
+
+.services-list {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+margin-top: 20px;
+}
+
+.service {
+width: 300px;
+height: 300px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin: 20px;
+box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+}
+
+.service img {
+width: 80%;
+margin-bottom: 20px;
+}
+
+.service h3 {
+font-size: 24px;
+margin-bottom: 20px;
+}
+
+.service p {
+font-size: 18px;
+text-align: center;
+}
+.transport-cards {
+display: flex;
+justify-content: space-between;
+}
+
+.card {
+width: 30%;
+height: fit-content;
+background-color: #fff;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+overflow: hidden;
+text-align: center;
+padding: 30px;
+}
+
+.card h3 {
+margin-top: 15px;
+font-weight: bold;
+color: #333;
+}
+
+.card img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+}
+
+.card p {
+margin-top: 20px;
+font-size: 14px;
+color: #666;
+text-align: justify;
+}
+
+.card button {
+margin-top: 40px;
+padding: 10px 20px;
+background-color: #333;
+color: #fff;
+border-radius: 20px;
+font-weight: bold;
+cursor: pointer;
+transition: all 0.3s ease-in-out;
+}
+
+.card button:hover {
+background-color: #fff;
+color: #333;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 30px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  width: 20%;
+  text-align: center;
+}
+
+h3 {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-icons a {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #fff;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+section {
+  padding: 50px 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.col {
+  flex-basis: 33.33%;
+  padding: 15px;
+}
+
+.headline {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+blockquote {
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+.bpgPhoto {
+  text-align: center;
+}
+
+.btImage img {
+  max-width: 100%;
+}
+

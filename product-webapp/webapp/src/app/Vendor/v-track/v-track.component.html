@@ -1,0 +1,164 @@
+<div id="main">
+    <div class="navbar">
+        <h1 class="heading" style="font-weight: bold">TRACK SHIPMENTS</h1>
+    </div>
+    <div class="container mt-5 pb-5 pt-5">
+        <div class="row" style="margin-top: -80px">
+            <h1 style="font-size: 18px; font-weight: bold">
+                ENTER TRACKING ID :
+            </h1>
+            <div
+                class="offset-md-3 col-md-6"
+                style="display: inline-flex"
+                class="input-group"
+            >
+                <input
+                    type="search"
+                    [(ngModel)]="search"
+                    style="padding-left: 20px"
+                    class="form-control"
+                    id="search"
+                />
+                <button (click)="getallshipments()">TRACK SHIPMENT</button>
+            </div>
+        </div>
+        <div>
+            <mat-card
+                class="example card"
+                style="height: fit-content; width: 1000px"
+            >
+                <div style="font-size: 15px; font-weight: bolder">
+                    <mat-card-header>
+                        <h3 style="font-size: 15px; font-weight: bolder">
+                            Tracking Id: {{ shipments.trackingId }}
+                        </h3>
+                    </mat-card-header>
+
+                    <mat-card-content style="display: inline-flex">
+                        <mat-card
+                            style="
+                                width: 300px;
+                                height: 300px;
+                                background-color: antiquewhite;
+                            "
+                        >
+                            <h3 style="font-size: 15px; font-weight: bolder">
+                                Shipment Details:
+                            </h3>
+                            <h3 style="font-size: 15px; font-weight: bolder">
+                                Service Type : {{ shipments.servicetype }}
+                            </h3>
+                            <h3 style="font-size: 15px; font-weight: bolder">
+                                Mode Of Transport :
+                                {{ shipments.modeOfTransport }}
+                            </h3>
+                            <h3 style="font-size: 15px; font-weight: bolder">
+                                Price : {{ shipments.price }}
+                            </h3>
+                            <h3 style="font-size: 15px; font-weight: bolder">
+                                OrderDate And Time :{{
+                                    shipments.orderDateAndTime
+                                }}
+                            </h3>
+                            <h3 style="font-size: 15px; font-weight: bolder">
+                                Status : {{ shipments.status }}
+                            </h3>
+                        </mat-card>
+                        <mat-card
+                            style="
+                                width: 300px;
+                                height: 300px;
+                                margin-left: 30px;
+                                background-color: antiquewhite;
+                            "
+                        >
+                            <h3 style="font-size: 15px; font-weight: bolder">
+                                From Address:
+                            </h3>
+                            <h3 style="font-size: 15px; font-weight: bolder">
+                                Address :
+                                {{ shipments.fromAddress.addressLine1 }}
+                            </h3>
+                            <h3 style="font-size: 15px; font-weight: bolder">
+                                City : {{ shipments.fromAddress.city }}
+                            </h3>
+                            <h3 style="font-size: 15px; font-weight: bolder">
+                                State : {{ shipments.fromAddress.state }}
+                            </h3>
+                            <h3 style="font-size: 15px; font-weight: bolder">
+                                Country : {{ shipments.fromAddress.country }}
+                            </h3>
+                            <h3 style="font-size: 15px; font-weight: bolder">
+                                ZipCode : {{ shipments.fromAddress.zipcode }}
+                            </h3>
+                        </mat-card>
+                        <mat-card
+                            style="
+                                width: 300px;
+                                height: 300px;
+                                margin-left: 30px;
+                                background-color: antiquewhite;
+                            "
+                        >
+                            <h3 style="font-size: 15px; font-weight: bolder">
+                                To Address:
+                            </h3>
+                            <h3 style="font-size: 15px; font-weight: bolder">
+                                Address : {{ shipments.toAddress.addressLine1 }}
+                            </h3>
+                            <h3 style="font-size: 15px; font-weight: bolder">
+                                City : {{ shipments.toAddress.city }}
+                            </h3>
+                            <h3 style="font-size: 15px; font-weight: bolder">
+                                State : {{ shipments.toAddress.state }}
+                            </h3>
+                            <h3 style="font-size: 15px; font-weight: bolder">
+                                Country : {{ shipments.toAddress.country }}
+                            </h3>
+                            <h3 style="font-size: 15px; font-weight: bolder">
+                                ZipCode : {{ shipments.toAddress.zipcode }}
+                            </h3>
+                        </mat-card>
+                    </mat-card-content>
+                </div>
+                <button
+                    type="button"
+                    class="btn btn-primary small-button"
+                    (click)="showPackageHistory = true"
+                    style="margin-top: 10px; margin-bottom: 10px"
+                >
+                    Package History
+                </button>
+            </mat-card>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="offset-md-1 col-md-10" *ngIf="showPackageHistory">
+            <table class="table table-bordered" id="mytable">
+                <thead>
+                    <th>Location City</th>
+                    <th>Description</th>
+                    <th>Date And Time</th>
+                </thead>
+                <tbody>
+                    <tr
+                        *ngFor="
+                            let t of shipments.transition
+                                | paginate : { itemsPerPage: 1, currentPage: p }
+                        "
+                    >
+                        <td>{{ t.locationCity }}</td>
+                        <td>{{ t.description }}</td>
+                        <td>{{ t.dateAndTime }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="margin-left: 850px">
+                <pagination-controls
+                    (pageChange)="p = $event"
+                ></pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="navbar">
+    <div class="navbar-logo">WELCOME TO PAYMENT</div>
+</div>
+  
+
+   <div class="form-container">
+    <h2 class="form-title">INPUT THE DETAILS</h2>
+    <form [formGroup]="paymentForm">
+      <div class="form-group">
+        <label for="cardType">Card Type</label>
+        <select id="cardType" name="cardType">
+          <option value="credit">Credit Card</option>
+          <option value="debit">Debit Card</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="cardholderName">Cardholder's Name</label>
+        <input type="text" id="cardholderName" name="cardholderName" required placeholder="Enter the cardholder's name">
+      </div>
+      <div class="form-group">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" name="cardNumber" required placeholder="Enter your card number">
+      </div>
+      <div class="form-group">
+        <label for="expMonth">Expiration Month</label>
+        <input type="text" id="expMonth" name="expMonth" required placeholder="Enter the expiration month">
+      </div>
+      <div class="form-group">
+        <label for="expYear">Expiration Year</label>
+        <input type="text" id="expYear" name="expYear" required placeholder="Enter the expiration year">
+      </div>
+      <div class="form-group">
+        <label for="cvc">CVC</label>
+        <input type="text" id="cvc" name="cvc" required placeholder="Enter the CVC">
+      </div>
+      <button class="form-button" (click)=" submitForm()">Submit</button>
+    </form>
+  </div>
+   
+  

@@ -1,0 +1,38 @@
+<div *ngIf="body1">
+    <h2 mat-dialog-title>Change Status</h2>
+    <mat-dialog-content>
+        <mat-button-toggle-group name="status" aria-label="Status" [(ngModel)]="selectedStatus">
+            <mat-button-toggle value="Placed">Placed</mat-button-toggle>
+            <mat-button-toggle value="Accepted">Accepted</mat-button-toggle>
+            <mat-button-toggle value="Packed">Packed</mat-button-toggle>
+            <mat-button-toggle value="Shipped">Shipped</mat-button-toggle>
+
+            <mat-button-toggle value="Delivered">Delivered</mat-button-toggle>
+        </mat-button-toggle-group>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button (click)="onNoClick()">Cancel</button>
+        <button mat-raised-button color="primary" [mat-dialog-close]="selectedStatus" (click)="prints()"
+            cdkFocusInitial>
+            Save
+        </button>
+    </mat-dialog-actions>
+</div>
+<div *ngIf="body2" id="package">
+    <h2 mat-dialog-title>Add Package location</h2>
+    <mat-dialog-content id="Addpackage" >
+        <form class="example-form" #locationdesc="ngForm" >
+            <mat-form-field class="example-full-width">
+                <input class="location" value="locationCity" name="locationCity" ngModel #locationCity="ngModel" matInput placeholder="Add Location">
+            </mat-form-field>
+        <br>
+            <mat-form-field class="example-full-width">
+                <textarea class="location" value="description" matInput  name="description" ngModel #description="ngModel" placeholder="Description"></textarea>
+            </mat-form-field>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button (click)="onNoClick2()">Cancel</button>
+        <button mat-raised-button color="primary" [mat-dialog-close]="locationdesc" (click)="savelocation(locationdesc)" cdkFocusInitial>Save</button>
+    </mat-dialog-actions>
+</div>

@@ -1,0 +1,130 @@
+<app-nav></app-nav>
+<div class="banner">
+    <div class="banner-text">
+        <h2 translate><span class="typed-element"></span></h2>
+        <p translate>We provide top-notch logistics services to meet all your needs</p>
+        <button (click)="navigateToServices()" translate>Explore Services</button>
+    </div>
+    <div class="banner-text">
+
+        <button  (click)="getstarted()" translate matTooltip="Get Started">Login/SignUp</button>
+    </div>
+</div>
+
+<br>
+<ng-image-slider #nav
+                 [images]="imageObject"
+                 [infinite]="false"
+                 [autoSlide]="1"
+                 [imageSize]="{width: '25%', height: 200}"
+                 slideImage="1" translate></ng-image-slider>
+<div class="services-section">
+    <h2 translate>Our Services</h2>
+    <div class="transport-cards">
+        <div class="card">
+            <h3 translate>By Road</h3>
+            <img src="../../assets/6.jpg" alt="Road Transport" />
+            <p translate>We provide reliable road transport services for all your goods and packages. Our fleet of vehicles is
+                equipped with state-of-the-art GPS systems to ensure safe and timely delivery of your shipments.</p>
+            <button (click)="navigateToRoadTransport()" translate>Learn More</button>
+        </div>
+        <div class="card">
+            <h3 translate>By Railway</h3>
+            <img src="../../assets/2.jpg" alt="Railway Transport" />
+            <p translate>Our railway transport services are designed to provide safe and efficient delivery of your goods. We have
+                a
+                team of experienced professionals who ensure smooth and hassle-free transportation of your shipments via
+                rail.</p>
+            <button (click)="navigateToRailwayTransport()" translate>Learn More</button>
+        </div>
+        <div class="card">
+            <h3 translate>By Air</h3>
+            <img src="../../assets/7.jpg" alt="Air Transport" />
+            <p translate>We offer fast and efficient air transport services for all your urgent shipments. Our air freight
+                services
+                are designed to provide a reliable and cost-effective solution for all your air transportation needs.
+            </p>
+            <button (click)="navigateToAirTransport()" translate>Learn More</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<section>
+    <div class="container">
+    <div class="row">
+        <div class="col col-3">
+            <div
+                class="rowItem ">
+                <div class="rowItemContent">
+                    <header class="header ">
+                        <div class="dash">
+                            <h3><span class="headline" translate>OUR SKILLS AND EXPERTISE</span></h3>
+                        </div>
+                    </header>
+                </div>
+            </div>
+        </div>
+        <div class="col col-3">
+            <div class="rowItem ">
+                <div class="rowItemContent">
+                    <div class="btText">
+                        <blockquote>
+                            <p translate>Atlas Logistics is most innovative logistic company that reaches out to provide comprehensive logistics solutions. The young and dynamic management team at Atlas Logistics contributes greatly with their new thinking by adapting new technology, applying latest and modern methods in the field to help the needs of customers.</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col col-4">
+            <div class="rowItem ">
+                <div class="rowItemContent">
+                    <div class="bpgPhoto" style="margin-top:-30px;">
+                        <div class="btImage"><img
+                                src="http://atlaslogistics.co.in/wp-content/uploads/2015/10/forklift.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3 translate>About Us</h3>
+            <p translate>We are a logistics company providing top-notch services to meet all your needs.</p>
+        </div>
+        <div class="footer-section">
+            <h3 translate>Contact Us</h3>
+            <p translate>Email: info@logistics.com</p>
+            <p translate>Phone: +1 (123) 456-7890</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a routerLink="/services" translate>Services</a></li>
+                <li><a routerLink="/pricing" translate>Pricing</a></li>
+                <li><a routerLink="/about" translate>About Us</a></li>
+                <li><a routerLink="/contact" translate>Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3 translate>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com/"><i class="fa-brands fa-square-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+    <p class="copyright" translate>Copyright © Logistics Company 2023</p>
+</footer>

@@ -1,0 +1,7 @@
+<div class="d-flex justify-content-center align-items-center flex-column">
+    <video autoplay playsinline muted id="webcam" width="300" height="300" #video></video>
+
+    <div class="prediction" *ngIf="predictions">
+        <h1>{{predictions[0].className}} - {{predictions[0].probability * 100 | number : '1.2-2'}}%</h1>
+    </div>
+</div>

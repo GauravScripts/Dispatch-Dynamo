@@ -1,0 +1,44 @@
+<app-nav></app-nav>
+<div class="card">
+<form class="ng-untouched ng-pristine ng-invalid">
+    <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+            <label class="Label" >NAME</label>
+            <input
+             aria-describedby="emailHelp"
+                class="form-control ng-untouched ng-pristine ng-invalid" maxlength="45" minlength="2" name="firstname"
+                 placeholder="Enter  name" required="" type="name" pattern="^[a-zA-Z0-9w .]+$" />
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+            <label class="Label" >COMPANY</label><input
+             aria-describedby="emailHelp"
+                class="form-control ng-untouched ng-pristine ng-invalid" maxlength="255" minlength="2" name="company"
+                 placeholder="Your compnay " required="" type="text" pattern="^[a-zA-Z0-9w .]+$" />
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+            <label class="Label">PHONE NUMBER</label><input
+             aria-describedby="emailHelp"
+                class="form-control ng-untouched ng-pristine ng-invalid" maxlength="10" minlength="10" name="phone"
+                 placeholder="Enter mobile" required="" type="number" />
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+            <label class="Label">EMAIL</label><input
+             aria-describedby="emailHelp"
+                class="form-control ng-untouched ng-pristine ng-invalid" email="" maxlength="255" minlength="5"
+                name="email"  placeholder="Enter email" required="" type="email"
+                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+        </div>
+    </div>
+    <button class="btn btn-primary SendDetails" type="submit">
+        Send Details
+    </button>
+</form>
+</div>
+
+

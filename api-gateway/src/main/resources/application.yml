@@ -1,0 +1,90 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+server:
+  port: 8080
+
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: "api-gateway"
+  cloud:
+    compatibility-verifier:
+      enabled: false
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            exposedHeaders: "*"
+      routes:
+        - id: authentication-services
+          uri: http://localhost:9201
+          predicates:
+            - Path=/authentication-services/**
+          filters:
+            - RewritePath=/authentication-services(?<segment>/?.*), $\{segment}
+
+        - id: chat-service
+          uri: http://localhost:8087
+          predicates:
+            - Path=/chat-service/**
+          filters:
+            - RewritePath=/chat-service(?<segment>/?.*), $\{segment}
+
+        - id: feedback-service
+          uri: http://localhost:7003
+          predicates:
+            - Path=/feedback-service/**
+          filters:
+            - RewritePath=/feedback-service(?<segment>/?.*), $\{segment}
+
+#        - id: MailServiceApp
+#          uri: http://localhost:8082
+#          predicates:
+#            - Path=/MailServiceApp/**
+#          filters:
+#            - RewritePath=/MailServiceApp(?<segment>/?.*), $\{segment}
+
+        - id: Recommendation-Service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/Recommendation-Service/**
+          filters:
+            - RewritePath=/Recommendation-Service(?<segment>/?.*), $\{segment}
+
+
+        - id: shipping-services
+          uri: http://localhost:7575
+          predicates:
+            - Path=/shipping-services/**
+          filters:
+            - RewritePath=/shipping-services(?<segment>/?.*), $\{segment}
+
+        - id: user-profile
+          uri: http://localhost:8085
+          predicates:
+            - Path=/user-profile/**
+          filters:
+            - RewritePath=/user-profile(?<segment>/?.*), $\{segment}
+
+        - id: vendor-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/vendor-service/**
+          filters:
+            - RewritePath=/vendor-service(?<segment>/?.*), $\{segment}
+
+        - id: product-webapp
+          uri: http://localhost:8099
+          predicates:
+            - Path=/**
+          filters:
+            - RewritePath=(?<segment>/?.*), $\{segment}

@@ -1,0 +1,40 @@
+#main-containt-box{
+    margin-top: 6rem;
+}
+
+.card {
+    width: 800px;
+    height: 200px;
+    background: rgb(255, 255, 255);
+    border-radius: 0.4em;
+    box-shadow: 0.3em 0.3em 0.7em #00000015;
+    transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: rgb(250, 250, 250) 0.2em solid;
+    margin: 2rem;
+    padding: 1rem;
+}
+
+.card:hover {
+    border: #006fff 0.2em solid;
+}
+
+.example-container{
+    width: 50rem;
+    margin: 2rem;
+    border-radius: 0.4em;
+    box-shadow: 0.3em 0.3em 0.7em #00000015;
+    transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: rgb(250, 250, 250) 0.2em solid;
+}
+
+.example-container:hover{
+    border: #006fff 0.2em solid;
+}
+
+.example-header{
+    width: 30rem;
+    margin-left: 5rem;
+}
+mat-form-field{
+    margin-left: 1rem;
+}

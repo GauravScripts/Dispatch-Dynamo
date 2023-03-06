@@ -1,0 +1,146 @@
+
+<div id="container" style="height: 100%;">
+    <div id="image"><img style="width: 100%; height: 85%; " src="/../../assets/Deliveryboy.gif" alt="no"></div>
+   
+    <form [formGroup]="updateForm" style="width: 60%; height: 100%;">
+  
+  
+      <mat-horizontal-stepper linear style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; background-color: antiquewhite; height: 85%;">
+          <mat-step [stepControl]="updateForm">
+              <ng-template matStepLabel>Name and Email</ng-template>
+              <label for="name">Name:</label>
+              <input
+                  type="text"
+                  id="name"
+                  formControlName="name"
+                  [(ngModel)]="userDetail.name"
+                  value="{{ userDetail?.name }}"
+              />
+              <br />
+              <label for="email">Email:</label>
+              <input
+                  type="text"
+                  id="email"
+                  formControlName="emailId"
+                  [(ngModel)]="userDetail.emailId"
+                  readonly
+                  value="{{ userDetail?.emailId }}"
+              />
+              <br />
+              <label for="message">Mobile:</label>
+              <input
+              type="text"
+              id="message"
+              formControlName="mobileNo"
+              [(ngModel)]="userDetail.mobileNo"
+              value="{{ userDetail?.mobileNo }}"
+          />
+          <br />
+  
+              <button style="margin-left: 90%;" mat-raised-button color="primary" matStepperNext>Next</button>
+          </mat-step>
+  
+         
+  
+          <mat-step [stepControl]="updateForm.get('address')">
+              <ng-template matStepLabel>Address</ng-template>
+              <div formGroupName="address" style="width: 100%">
+                  <label for="message">Address:</label>
+                  <input
+                      type="text"
+                      id="message"
+                      formControlName="addressLine1"
+                      [(ngModel)]="userDetail.address.addressLine1"
+                      value="{{ userDetail?.address.addressLine1 }}"
+                  />
+                  <br />
+                  <label for="message">City:</label>
+                  <input
+                      type="text"
+                      id="message"
+                      formControlName="city"
+                      [(ngModel)]="userDetail.address.city"
+                      value="{{ userDetail?.address.city }}"
+                  />
+                  <br />
+                  <label for="message">State:</label>
+                  <input
+                      type="text"
+                      id="message"
+                      formControlName="state"
+                      [(ngModel)]="userDetail.address.state"
+                      value="{{ userDetail?.address.state }}"
+                  />
+                  <br />
+                  <label for="message">Country:</label>
+                  <input
+                      type="text"
+                      id="message"
+                      formControlName="country"
+                      [(ngModel)]="userDetail.address.country"
+                      value="{{ userDetail?.address.country }}"
+                  />
+                  <br />
+                  <label for="message">Zipcode:</label>
+                  <input
+                      type="text"
+                      id="message"
+                      formControlName="zipcode"
+                      [(ngModel)]="userDetail.address.zipcode"
+                      value="{{ userDetail?.address.zipcode }}"
+                  />
+                  <br />
+              </div>
+              <button style="margin-left: 80%;" mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button mat-raised-button color="primary" matStepperNext style="margin-left:15px ;">Next</button>
+          </mat-step>
+  
+          <mat-step>
+              <ng-template matStepLabel>Confirmation</ng-template>
+            <div> <b> <h2> <u> Please review your changes:</u></h2></b></div>
+              <table style=" color: black; font-size: 20px; " class="table table-striped">
+                  <tr>
+                      <td>Name:</td>
+                      <td>{{ userDetail.name }}</td>
+                  </tr>
+                  <tr>
+                      <td>Email:</td>
+                      <td>{{ userDetail.emailId }}</td>
+                  </tr>
+                  <tr>
+                      <td>Mobile:</td>
+                      <td>{{ userDetail.mobileNo }}</td>
+                  </tr>
+                  <tr>
+                      <td>Address:</td>
+                      <td>{{ userDetail.address.addressLine1 }}</td>
+                  </tr>
+                  <tr>
+                      <td>City:</td>
+                      <td>{{ userDetail.address.city }}</td>
+                  </tr>
+                  <tr>
+                      <td>State:</td>
+                      <td>{{ userDetail.address.state }}</td>
+                  </tr>
+                  <tr>
+                      <td>Country:</td>
+                      <td>{{ userDetail.address.country }}</td>
+                  </tr>
+                  <tr>
+                      <td>Zipcode:</td>
+                      <td>{{ userDetail.address.zipcode }}</td>
+                  </tr>
+              </table>
+              <button  mat-raised-button matStepperPrevious color="primary" style="margin-top: 25px; margin-left: 7%;">Back</button>
+              <button
+                  mat-raised-button color="primary" style="margin-left: 15px; margin-top: 25px;"
+                  (click)="openSnackBar()"
+                  (click)="updateUser(userDetail.emailId)"
+              >
+                  Update
+              </button>
+          </mat-step>
+      </mat-horizontal-stepper>
+  </form>
+  </div>

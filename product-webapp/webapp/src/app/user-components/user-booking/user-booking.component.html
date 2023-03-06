@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-title>Recommended Vendors</mat-card-title>
+    <mat-card-content>
+      <mat-grid-list cols="4" rowHeight="4:3">
+        <mat-grid-tile *ngFor="let vendor of vendors">
+          <mat-card>
+            <mat-card-title>{{vendor.name}}</mat-card-title>
+            <mat-card-content>
+              <p>Rating: {{vendor.rating}}</p>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+  </mat-card>
+  

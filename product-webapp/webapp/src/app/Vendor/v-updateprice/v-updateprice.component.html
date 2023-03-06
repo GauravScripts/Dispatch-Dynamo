@@ -1,0 +1,86 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col col-md-5">
+            <div class="card" id="card1">
+                <h1 class="header">ADD THE PRICE</h1> <br>
+
+                <form #updateprice="ngForm" (ngSubmit)="update(updateprice)">
+                    <label class="select">Select Currency :</label> 
+                    <select class="form-select" aria-label="Select" name="priceType" ngModel #priceType="ngModel">
+                        <!-- <option selected >Select</option> -->
+                        <option value="International">International ($)</option>
+                        <option value="Domestics">Domestics (₹)</option>
+                    </select>
+
+                    <div class="inp">
+                        <label class="form-row">By Road Price :</label> 
+                        <input type="number" name="byRoad" ngModel #byRoad="ngModel" class="input">
+                    </div>
+                    <div class="inp">
+                        <label class="form-row">By Air Price :</label> 
+                        <input type="number" name="byAir" ngModel #byAir="ngModel" class="input">
+                    </div>
+                    <div class="inp">
+                        <label class="form-row">By Railway Price :</label> 
+                        <input type="number" name="byRailway" ngModel #byRailway="ngModel" class="input">
+                    </div>
+                    <div>
+                        <button type="submit" class="complex-button">Update Price</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col col-md-7">
+            <div class="row showpricecard" >
+                <div class="card" id="card2">
+                    <div class="header">your Price($)/per km</div>
+                    <div class="body">
+                        <div class="skill">
+                            <div class="skill-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By Road</div>
+                            <div class="skill-percent-number">
+                                :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{price1.byRoad}}
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By Railway</div>
+                            <div class="skill-percent-number">
+                                :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{price1.byRailway}}
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By Air</div>
+                            <div class="skill-percent-number">
+                                :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{price1.byAir}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="card3" id="card3">
+                    <div class="header">your Price(₹)/per km</div>
+                    <div class="body">
+                        <div class="skill">
+                            <div class="skill-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By Road</div>
+                            <div class="skill-percent-number">
+                                :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{price2.byRoad}}
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By Railway</div>
+                            <div class="skill-percent-number">
+                                :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{price2.byRailway}}
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By Air</div>
+                            <div class="skill-percent-number">
+                                :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{price2.byAir}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="navbar">
+    <div class="top">
+        <mat-icon>notifications_none</mat-icon>
+    </div>
+<div class="user">
+    <img src="https://e7.pngegg.com/pngimages/304/305/png-clipart-man-with-formal-suit-illustration-web-development-computer-icons-avatar-business-user-profile-child-face.png" alt="">
+<h4 class="name">Admin</h4>
+<p class="mail">admin1234@gmail.com</p>
+</div>
+<!-- <div class="menu">
+    <div class="menu-head"></div>
+    <span>Dashboard</span>
+</div> -->
+
+<!-- <div class="overflow-container">
+    <ul class="menu-dropdown">
+        <li><span class="icon"><i class="bi bi-3-square-fill"></i><a [routerLink]="['/vsidenav/vdashboard']">Dashboard</a></span></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div> -->
+<div class="menu-item">
+    <button mat-button class="menu-button" [routerLink]="['/vsidenav/vdashboard']" >
+         <span> <i class="bi bi-0-circle-fill"></i> Dashboard</span>
+        <!-- <mat-icon>dashboard</mat-icon> -->
+    </button>
+        
+    <button mat-button class="menu-button" [routerLink]="['/vsidenav/vorders']">
+        <mat-icon>dashboard</mat-icon>
+        <span>Orders</span>
+    </button>
+     
+    <button mat-button class="menu-button" [routerLink]="['/vsidenav/vcity']">
+        <mat-icon>dashboard</mat-icon>
+        <span>City</span>
+    </button>
+      
+    <button mat-button class="menu-button" [routerLink]="['/vsidenav/vprofile']">
+        <mat-icon>dashboard</mat-icon>
+        <span>Profile</span>
+    </button>
+    <button mat-button class="menu-button"[routerLink]="['/vsidenav/vtrack']">
+        <mat-icon>dashboard</mat-icon>
+        <span>Track</span>
+    </button>
+    <button mat-button class="menu-button" [routerLink]="['/vsidenav/vsupport']">
+        <mat-icon>dashboard</mat-icon>
+        <span>Support</span>
+    </button>
+
+</div>
+
+</div>

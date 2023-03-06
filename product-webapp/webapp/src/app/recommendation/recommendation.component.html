@@ -1,0 +1,78 @@
+<div id ="main" >
+<h3 id="head">Vendor Recommendation</h3>
+
+<div class="container mt-5 pb-5 pt-5 ">
+
+    <div class="row ">
+        <div class="offset-md-3 col-md-6  " style="display: inline-flex;">
+            <input type="search" [(ngModel)]="search" class="form-control" id="search" placeholder="Search For City.....">
+        <button style="border:white; border-radius: 5px;">  <mat-icon style="padding-top: 5px;" (click)="searchText()">search</mat-icon></button>  
+    <button style="border:white; border-radius: 5px;" *ngIf="showClearButton" (click)="clearcities()"><mat-icon style="padding-top: 5px;">close</mat-icon></button>    
+    </div>
+    
+    </div>
+
+    <!-- <h3 id="error" class="text-center mt-3"></h3> -->
+   
+    
+
+
+
+
+
+<div class="wrapper" *ngIf="showCommonTable">
+     <!-- <div class="container mt-1 pb-1 pt-1 " style="background-color: rgb(217, 235, 250);border-radius: 20px;"> -->
+     <mat-card class="example-card"  *ngFor ="let cities of city  " style="width
+     :300px;border: 2px solid black;margin-left: 50px;  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB); height: 300px;border-radius: 10px;margin-top: 100px; background-color: blanchedalmond;">
+         <!-- <mat-card-header> -->
+            
+          <div class="full" style="font-size: 15px;width:300px;color: azure; font-weight: bold; padding-left: 20px;padding-top: 20px;">
+            <img mat-card-image src="../../assets/icon.png" alt="" style="width:100px;height:100px; margin-left: 70px; padding-bottom: 20px;">    
+            <mat-card-content>
+          <p >EmailId: {{cities.emailId}}</p>
+          <p>Name: {{cities.name}}</p> 
+       
+        <!-- </mat-card-header> --> 
+        
+          <p>
+           CompanyName: {{cities.companyName}}
+          </p>
+          <p>
+            OfficeContact: {{cities.officeContact}}
+           </p>
+           <p>
+            Cities:  {{cities.cities}}
+           </p>
+        </mat-card-content>
+    </div>
+      </mat-card>
+    </div>
+      <!-- </div> -->
+<div *ngIf="showSearchTable">
+      <mat-card class="example-card"  *ngFor ="let cities of searchcities  " style="width
+     :300px;border: 2px solid black; background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB); height: 300px; display: inline-block;border-radius: 10px;position: relative; margin-left: 50px;margin-top: 100px; background-color: blanchedalmond;">
+         <!-- <mat-card-header> -->
+            
+          <div class="full"  style="font-size: 15px;color: azure; font-weight: bold; padding-left: 20px;padding-top: 20px;">
+            <img mat-card-image src="../../assets/icon.png" alt="" style="width:100px;height:100px; margin-left: 70px; padding-bottom: 20px;">
+            <mat-card-content>
+          <p >EmailId: {{cities.emailId}}</p>
+          <p>Name: {{cities.name}}</p> 
+       
+        <!-- </mat-card-header> --> 
+        
+          <p>
+           CompanyName: {{cities.companyName}}
+          </p>
+          <p>
+            OfficeContact: {{cities.officeContact}}
+           </p>
+           <p>
+            Cities:  {{cities.cities}}
+           </p>
+        </mat-card-content>
+    </div>
+      </mat-card>
+    </div>
+</div>
+</div>

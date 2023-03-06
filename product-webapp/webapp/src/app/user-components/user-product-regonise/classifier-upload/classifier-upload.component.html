@@ -1,0 +1,19 @@
+<div class="container">
+    <label for="file-input">Choose an image</label>
+    <div class="file-upload">
+        <input type="file" id="file-input" class="custom-file-input" (change)="fileChangeEvent($event)">
+        <label for="file-input" class="custom-file-label">Select some files</label>
+    </div>
+
+    <div *ngIf="loading; else elseBlock">
+        <img src="./assets/loading.gif" alt="Loading...">
+    </div>
+
+    <ng-template #elseBlock>
+        <img [src]="imageSrc" alt="Selected image" #img *ngIf="imageSrc">
+    </ng-template>
+
+    <div class="prediction" *ngIf="predictions">
+        <h1>{{predictions[0].className}} - {{predictions[0].probability * 100 | number : '1.2-2'}}%</h1>
+    </div>
+</div>

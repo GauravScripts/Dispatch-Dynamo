@@ -1,0 +1,86 @@
+
+
+<div class="card">
+        <h2>Add City</h2>
+        <div>
+            <form [formGroup]="form">
+                <mat-form-field appearance="outline" >
+                    <mat-label>Country</mat-label>
+                    <mat-select [formControl]="country" name="country">
+                        <mat-option *ngFor="let country of countries" [value]="country.shortName">
+                            {{ country.name }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="country.hasError('required')">Please select a country.</mat-error>
+                </mat-form-field>
+        
+        
+                <mat-form-field appearance="outline">
+                    <mat-label>State</mat-label>
+                    <mat-select [formControl]="state" name="state">
+                        <mat-option *ngFor="let state of states" [value]="state">
+                            {{ state }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="state.hasError('required')">Please select a state.</mat-error>
+                </mat-form-field>
+        
+        
+                <mat-form-field appearance="outline">
+                    <mat-label>City</mat-label>
+                    <mat-select [formControl]="city" name="city">
+                        <mat-option *ngFor="let city of cities" [value]="city">
+                            {{ city }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="city.hasError('required')">Please select a city.</mat-error>
+                </mat-form-field>
+            
+            </form>
+        </div>
+    </div>
+
+
+<hr>
+
+
+<div class="example-header">
+    <mat-form-field style="width:30rem">
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search ...">
+    </mat-form-field>
+</div>
+
+<div class="example-container">
+
+    <mat-table [dataSource]="dataSource" matSort>
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.id-1+2}} </mat-cell>
+        </ng-container>
+
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+
+        </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="Action">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Action </mat-header-cell>
+            <mat-cell *matCellDef="let row"> <button class="btn btn-info" (click)="deleteCity(row.name)" >Delete</button> </mat-cell>
+
+        </ng-container>
+
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+    </mat-table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
+

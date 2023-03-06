@@ -1,0 +1,36 @@
+<!-- <h1 mat-dialog-title>Order Details</h1>
+<div mat-dialog-content>
+  <h2>Order Info</h2>
+  <p>Order ID: {{order.orderId}}</p>
+  <p>Customer Name: {{order.customerName}}</p>
+  <p>Shipping Address: {{order.shippingAddress}}</p>
+  <p>Total Amount: {{order.totalAmount}}</p>
+  <h2>Transitions</h2>
+  <div *ngFor="let t of transition">
+    <p>Location City: {{t.locationCity}}</p>
+    <p>Description: {{t.description}}</p>
+    <p>Date and Time: {{t.dateAndTime}}</p>
+  </div>
+  <h2>Update Transitions</h2>
+  <div *ngFor="let t of transition; let i=index">
+    <mat-form-field>
+      <mat-label>Location City</mat-label>
+      <input matInput [(ngModel)]="t.locationCity">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <input matInput [(ngModel)]="t.description">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Date and Time</mat-label>
+      <input matInput [(ngModel)]="t.dateAndTime">
+    <button mat-icon-button color="warn" (click)="transition.splice(i, 1)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+  <button mat-raised-button color="primary" (click)="transition.push({})">Add Transition</button>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-button color="primary" (click)="onSaveClick()">Save</button>
+</div> -->

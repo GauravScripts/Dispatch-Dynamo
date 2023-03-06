@@ -1,0 +1,183 @@
+version: "3.9"
+services:
+  eureka-server:
+    build: eureka-server/
+    container_name: eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - "8076:8076"
+  api-gateway:
+    build: api-gateway/
+    container_name: api-gateway
+    depends_on:
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - "8086:8086"
+  product-webapp:
+    build: product-webapp/
+    image: product-webapp
+    depends_on:
+      - eureka-server
+      - api-gateway
+    restart: always
+    container_name: product-webapp
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - "4200:4200"
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    restart: always
+    hostname: localhost
+    network_mode: host
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 'admin'
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: "YES"
+      MYSQL_DATABASE: CargoPluse
+  mongodb:
+    image: mongo:latest
+    container_name: mongo-container
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 27017:27017
+  neo4jService:
+    image: neo4j:latest
+    container_name: neo4jService
+    restart: always
+    network_mode: host
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      NEO4J_AUTH: neo4j/gaurav@1234
+      NEO4J_dbms_default__database: users
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    network_mode: host
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.5.2
+    container_name: elasticsearch
+    network_mode: "host"
+    environment:
+      - node.name=elasticsearch
+      - cluster.name=elasticsearch
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+  authentication-services:
+    image: authentication-image
+    container_name: authentication-services
+    build : authentication-services
+    restart: always
+    network_mode: "host"
+    ports:
+      - "9201:9201"
+    depends_on:
+      - mysql
+      - api-gateway
+      - eureka-server
+  chatservice:
+    image: chatservice-image
+    container_name: chatservice
+    build : chat-service
+    restart: always
+    network_mode: "host"
+    ports:
+      - "9205:9205"
+    depends_on:
+      - mongodb
+      - api-gateway
+      - eureka-server
+  feedback-service:
+    image: feedbackservice-image
+    container_name: feedback-service
+    build : feedback-service
+    restart: always
+    network_mode: "host"
+    ports:
+      - "7003:7003"
+    depends_on:
+      - mongodb
+      - api-gateway
+      - eureka-server
+  Mail-services:
+    image: mailservice-image
+    container_name: Mail-services
+    build : MailServiceApp
+    restart: always
+    network_mode: "host"
+    ports:
+      - "9202:9202"
+    depends_on:
+      - mongodb
+      - api-gateway
+      - eureka-server
+  recommendation-services:
+    image: recommendationservice-image
+    container_name: recommendation-services
+    build : Recommendation-Service
+    restart: always
+    network_mode: "host"
+    ports:
+      - "8082:8082"
+    depends_on:
+      - neo4jService
+      - api-gateway
+      - eureka-server
+  shipping-services:
+    image: shippingservice-image
+    container_name: shipping-services
+    build : shipping-services
+    restart: always
+    network_mode: "host"
+    ports:
+      - "7575:7575"
+    depends_on:
+      - mongodb
+      - api-gateway
+      - eureka-server
+  user-profile:
+    image: userprofile-image
+    container_name: user-profile
+    build : user-profile
+    restart: always
+    network_mode: "host"
+    ports:
+      - "8085:8085"
+    depends_on:
+      - mongodb
+      - api-gateway
+      - eureka-server
+  vendor-service:
+    image: vendorservice-image
+    container_name: vendor-service
+    build : vendor-service
+    restart: always
+    network_mode: "host"
+    ports:
+      - "8083:8083"
+    depends_on:
+      - elasticsearch
+      - api-gateway
+      - eureka-server

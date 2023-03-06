@@ -1,0 +1,126 @@
+<div class="container text-center">
+
+    <div class="form-wrap rounded">
+        <div class="form-cover rounded">
+            <div class="row gutters-sm">
+                <div class="col-md-4 mb-3">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <img [src]="imageUrl" class="rounded-circle " id="image" width="250px" height="250px" style="border-radius: 50%;">
+                            <input type="file" hidden value="select" #selectFile (change)="onFileSelected($event)">
+                        </div>
+                        <div>
+                            <button class="btn btn-success" style="width: 10rem;margin: 2rem; "(click)="selectFile.click()">Upload Image</button>
+                            <button class="btn btn-danger" style="width: 10rem;" (click)="deleteImage()" >Delete</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card mb-3">
+                        <div class="card-body">
+
+                            <form #updateVendorDetails="ngForm" (ngSubmit)="update(updateVendorDetails)"
+                                class="form-container is-readonly">
+                                <div class="form-group row">
+
+                                    <div class="col-sm">
+                                        <label class="form-row">Vendor EmailId :
+                                            <input type="text" class="form-control input-block " id="emailId"
+                                                value="{{vendor.emailId}}" placeholder="Enter Vendor EmailId " disabled>
+                                        </label>
+                                    </div>
+
+                                </div>
+                                <div class="form-group row">
+
+                                    <div class="col-sm-6">
+                                        <label class="form-row">Company Name :
+                                            <input type="text" class="form-control input-block inpt" name="companyName"
+                                                ngModel value="{{vendor.companyName}}" #companyName="ngModel"
+                                                placeholder="Enter Company Name" disabled>
+                                        </label>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <label class="form-row">Office Contact :
+                                            <input type="tel" class="form-control input-block inpt" name="officeContact"
+                                                ngModel value="{{vendor.officeContact}}" #officeContact="ngModel"
+                                                placeholder=" Enter Office Contact" disabled>
+                                        </label>
+                                    </div>
+
+                                </div>
+
+                                <h2>Address :</h2>
+
+                                <div class="form-group row">
+
+                                    <div class="col-sm-8">
+                                        <label class="form-row">address line 1 :
+                                            <input type="text" class="form-control input-block inpt" name="addressLine1"
+                                                ngModel value="{{vendor.address.addressLine1}}" #addressLine1="ngModel"
+                                                placeholder="Enter addressLine1" disabled>
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="form-row"> city :
+                                            <input type="text" class="form-control input-block inpt" name="city" ngModel
+                                                value="{{vendor.address.city}}" #city="ngModel" placeholder="Enter city"
+                                                disabled>
+                                        </label>
+                                    </div>
+
+                                </div>
+                                <div class="form-group row">
+
+                                    <div class="col-sm-4">
+                                        <label class="form-row"> state :
+                                            <input type="text" class="form-control input-block inpt" name="state"
+                                                ngModel value="{{vendor.address.state}}" #state="ngModel"
+                                                placeholder="Enter state" disabled>
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="form-row">country :
+                                            <input type="text" class="form-control input-block inpt" name="country"
+                                                ngModel value="{{vendor.address.country}}" #country="ngModel"
+                                                placeholder="Enter country" disabled>
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="form-row">zipcode :
+                                            <input type="number" class="form-control input-block inpt" name="zipcode"
+                                                ngModel value="{{vendor.address.zipcode}}" #zipcode="ngModel"
+                                                placeholder="Enter zipcode" disabled>
+                                        </label>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group form-row row">
+                                    <div class="col-md-3">
+                                    </div>
+                                    <div class="col-md-3">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button id="edit" class="btn btn-edit btn-block btn-success js-edit"
+                                            type="button">Edit</button>
+                                        <button id="submit_B" class="btn btn-save btn-block btn-success js-save"
+                                            type="Submit">save</button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button id="submit_B" class="btn btn-whole btn-block btn-success js-edit"
+                                            type="button"></button>
+                                        <button id="cancle" class="btn btn-cancle btn-block btn-danger"
+                                            type="reset">Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

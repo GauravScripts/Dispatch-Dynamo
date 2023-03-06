@@ -1,0 +1,124 @@
+<app-nav></app-nav>
+<div class="login-page_container">
+    <!--       Sign in Side      -->
+    <div class="login-section page-side section-ope" >
+        <div class="section-page_intro" translate >
+            <img src="../../assets/Image/signin-icon-black.png" alt="signin-icon" >
+            <p class="section-page-intro_title" translate >Sign In</p>
+        </div>
+
+        <div class="login-form-area">
+            <p class="form-title" translate>Sign In</p>
+            <div class="section-form">
+                <form class="login-form" [formGroup]="loginCustomer" (submit)="login()">
+                    <label class="login-page_label">
+                        <input class="login-page_input" type="email" name="email" autocomplete="off"  formControlName="emailId" required>
+                        <span class="login-page_placeholder" translate>Email</span>
+                    </label>
+                    <label class="login-page_label">
+                        <input class="login-page_input" type="password" name="password"  formControlName="password" required>
+                        <span class="login-page_placeholder" translate>Password</span>
+                    </label>
+                    <div class="login-section_submit">
+                        <div class="login-page-submit-btn">
+                            <input type="submit" name="submit-login" value="submit">
+                        </div>
+                    </div>
+                    <div class="login-page_forget">
+                        <a href="" translate>Forget Your Password ?</a>
+                    </div>
+                </form>
+                <form class="forget-form" (submit)="passwordOTP()" [formGroup]="forgotPassword">
+                    <p class="forget-title" translate>Forget Your Password</p>
+                    <label class="login-page_label">
+                        <input class="login-page_input" type="email" name="email" autocomplete="off" [(ngModel)]="emailId" formControlName="emailId" required />
+                        <span class="login-page_placeholder" translate>Email</span>
+                    </label>
+                    <div class="login-section_submit" id="forgot-pass-email">
+                        <div class="login-page-submit-btn">
+                            <input type="submit" name="submit-login" value="submit">
+                        </div>
+                    </div>
+                </form>
+                <div *ngIf="otpforgetform">
+                    <label class="login-page_label">
+                        <p class="forget-title" translate>Enter OTP</p>
+                        <input class="login-page_input" type="text" name="otp" autocomplete="off" [(ngModel)]="otpVerify" />
+                    </label>
+                    <div class="login-section_submit" (click)="verifyOTP()" id="otp-verify-button">
+                        <div class="login-page-submit-btn">
+                            <input type="submit" name="submit-login" value="submit"  >
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="newPassword">
+                    <label class="login-page_label">
+                        <p class="forget-title" translate>Enter New Password</p>
+                        <input class="login-page_input" type="text" name="New Password" autocomplete="off" [(ngModel)]="Password" required/>
+                    </label>
+                    <div class="login-section_submit" (click)="changePassword()">
+                        <div class="login-page-submit-btn">
+                            <input type="submit" name="submit-login" value="submit"  >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--       Sign up Side      -->
+    <div class="signup-section page-side section-clos">
+        <div class="section-page_intro" style="padding-bottom: 20px !important;">
+            <img src="../../assets/Image/signup-icon.png" alt="signup-icon">
+            <p class="section-page-intro_title" translate>Sign Up</p>
+        </div>
+        <div class="signup-form-area">
+            <p class="form-title" translate>Sign Up</p>
+            <div class="section-form">
+                <form class="signup-form" [formGroup]="customerSignUp">
+                    <label class="login-page_label">
+                        <input class="login-page_input" type="text" name="Name" autocomplete="off" formControlName="name" required>
+                        <span class="login-page_placeholder" translate>Name</span>
+                    </label>
+                    <label class="login-page_label">
+                        <input class="login-page_input" type="email" name="email" formControlName="emailId" autocomplete="off" required>
+                        <span class="login-page_placeholder" translate>Email</span>
+                    </label>
+                    <label class="login-page_label">
+                        <input class="login-page_input" type="password" name="password" formControlName="password">
+                        <span class="login-page_placeholder" translate>Password</span>
+                    </label>
+                    <label class="login-page_label">
+                        <input class="login-page_input" type="password" name="confirm password" formControlName="cnfPassword" required>
+                        <span class="login-page_placeholder" translate>Confirm Password</span>
+                    </label>
+                    <mat-radio-group  aria-label="Select an option" formControlName="role" color="primary">
+                        <span style="color: white" translate>User Type: </span>
+                        <br>
+                        <mat-radio-button value="User"><span style="color: white" translate>Customer</span></mat-radio-button>
+                        <br>
+                        <mat-radio-button value="Vendor"><span style="color: white" translate>Vendor</span></mat-radio-button>
+                    </mat-radio-group>
+                    <br>
+                    <br>
+                    <div class="signup-section_submit" id="getOtpButton">
+                        <div class="login-page-submit-btn"  (click)="getOTP()">
+                            <input type="submit" name="submit-signup" value="submit">
+                        </div>
+                    </div>
+                </form>
+                <div *ngIf="otpform">
+                    <label class="login-page_label">
+                        <p class="forget-title" style="color: white !important;" translate>Enter OTP</p>
+                        <input class="login-page_input" type="text" name="OTP" autocomplete="off"  [(ngModel)]="otpvalidation" required >
+                    </label>
+                    <div class="signup-section_submit">
+                        <div class="login-page-submit-btn"  (click)="registering()">
+                            <input type="submit" name="submit-signup" value="submit">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

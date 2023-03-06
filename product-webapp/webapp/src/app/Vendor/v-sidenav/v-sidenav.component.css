@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@1,500&display=swap');
+mat-sidenav {
+    /* background-color: rgb(30, 28, 28); */
+    background-color: #2e2836;
+
+    width: 350px;
+    height: 100%;
+}
+
+.sidenav-container {
+    height: 100%;
+}
+
+mat-sidenav-content {
+    height: 100vh;
+}
+mat-nav-list a:hover {
+    background-color: gray;
+}
+mat-toolbar {
+    justify-content: space-between;
+}
+
+mat-icon {
+    margin-left: 15px;
+    color: #fffffa;
+}
+
+.icons {
+    color: #fffffa;
+    font-size: x-large;
+}
+
+/*a {*/
+/*    margin: 1rem 0;*/
+/*}*/
+.sticky-toolbar {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+.menu-stuff {
+    all: unset;
+}
+#navbar {
+    position: absolute;
+    top: 0.68rem;
+    right: 5rem;
+}

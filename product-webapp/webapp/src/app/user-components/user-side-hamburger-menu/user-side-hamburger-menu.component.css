@@ -1,0 +1,115 @@
+mat-toolbar {
+    font-size: 20px;
+}
+
+mat-sidenav-container.full-height {
+    height: 100%;
+    width: 100%;
+}
+
+mat-sidenav {
+    width: 350px;
+    background-color: #FFFFFA;
+}
+mat-icon {
+    color: #FFFFFA;
+}
+.icons {
+    color: #FFFFFA;
+    font-size: x-large;
+}
+a {
+    margin: 1rem 0;
+}
+mat-nav-list a {
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+mat-nav-list a:hover {
+    background-color:gray;
+}
+
+.fa {
+    margin-right: 10px;
+    font-size: 20px;
+}
+.sticky-toolbar {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+.menu-stuff {
+    all: unset;
+    cursor: pointer;
+}
+#navbar {
+    position: absolute;
+    top: 0.68rem;
+    right: 5rem;
+}
+.navbar-brand {
+
+    display: flex;
+    align-items: center;
+    height: 50px;
+
+}
+
+.navbar-brand img {
+    height: 100%;
+    margin-right: 10px;
+}
+
+.navbar-brand span {
+    font-family: 'Shantell Sans', cursive;
+    font-size: 2rem;
+    color: #282825;
+}
+.toggle {
+    display: none;
+}
+
+.toggle-label {
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    overflow: hidden;
+}
+
+.sun,
+.moon {
+    position: absolute;
+    left: 0;
+    margin-top:10px;
+    margin-left:10px;
+    width: 70%;
+    height: auto;
+    transition: top 0.3s;
+}
+
+.sun {
+    top: 0;
+}
+
+.moon {
+    top: -150%;
+}
+
+.toggle:checked + .toggle-label .sun {
+    top: 150%;
+}
+
+.toggle:checked + .toggle-label .moon {
+    top: 0;
+}
+
+
+
+

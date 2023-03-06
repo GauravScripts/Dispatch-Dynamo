@@ -1,0 +1,124 @@
+<mat-sidenav-container
+    class="sidenav-container"
+    [ngClass]="{ 'full-height': currentUrl != '/usidenav/bookOrder' }"
+>
+    
+    <mat-sidenav
+        style="background-color: #313638"
+        #drawer
+        class="sidenav"
+        fixedInViewport
+
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="false"
+    >
+        <mat-toolbar style="background-color: #4d84e2">
+            <a class="navbar-brand" href="#" style="height: 50px;">
+                <span style="font-family: 'Shantell Sans', cursive; font-size: 2rem; ">Menu</span>
+            </a>
+        </mat-toolbar>
+        <mat-nav-list>
+            <a
+                mat-list-item
+                [routerLink]="['/usidenav/userDashboard']"
+                (click)="drawer.toggle()"
+            >
+                <mat-icon class="icon">dashboard</mat-icon>
+                <span class="icons"> Dashboard</span>
+            </a>
+            <!-- <a mat-list-item [routerLink]="['/vsidenav/vorders']">
+              <mat-icon class="icon">shopping_cart</mat-icon> <span class="icons"> Orders</span>
+          </a> -->
+            <a
+                mat-list-item
+                [routerLink]="['/usidenav/userOrders']"
+                (click)="drawer.toggle()"
+            >
+                <mat-icon class="icon">shopping_cart</mat-icon>
+                <span class="icons"> Orders</span>
+            </a>
+            <a
+                mat-list-item
+                [routerLink]="['/usidenav/userprofile']"
+                (click)="drawer.toggle()"
+            >
+                <mat-icon> person_pin</mat-icon>
+                <span class="icons"> Profile</span>
+            </a>
+            <a
+                mat-list-item
+                [routerLink]="['/usidenav/editUserProfile']"
+                (click)="drawer.toggle()"
+            >
+                <mat-icon> person_pin</mat-icon>
+                <span class="icons">Edit Profile</span>
+            </a>
+            <a
+                mat-list-item
+                [routerLink]="['/usidenav/userTracking']"
+                (click)="drawer.toggle()"
+            >
+                <mat-icon>track_changes</mat-icon>
+                <span class="icons">Track Orders</span>
+            </a>
+            <a
+                mat-list-item
+                [routerLink]="['/usidenav/bookOrder']"
+                (click)="drawer.toggle()">
+                <mat-icon>bookmark_border</mat-icon
+                ><span class="icons">Book Orders</span>
+            </a>
+            <a
+                mat-list-item
+                [routerLink]="['/usidenav/upload']"
+                (click)="drawer.toggle()">
+                <mat-icon> pageview</mat-icon>
+
+                <span class="icons">Image Recognise</span>
+            </a>
+            <a mat-list-item (click)="logout()">
+                <mat-icon class="icon">logout</mat-icon>
+                <span class="icons"> Logout</span>
+            </a>
+            <!-- <a mat-list-item [routerLink]="['/vsidenav/vsupport']">
+              <mat-icon class="icon">support</mat-icon> <span class="icons"> Support</span>
+          </a> -->
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class=".mat-drawer-content" style="overflow: hidden">
+        <mat-toolbar
+            class="sticky-toolbar"
+            style="color: #fffffa; background-color: #4d84e2"
+        >
+            <button
+                type="button"
+                aria-label="Toggle sidenav"
+                class="menu-stuff"
+                (click)="drawer.toggle()"
+            >
+                <mat-icon
+                    style="color: #313638"
+                    aria-label="Side nav toggle icon"
+                    >menu</mat-icon
+                >
+            </button>
+            <a class="navbar-brand" href="#" style="height: 50px; margin-left: 500px;">
+                <img
+                        src="../../assets/67-676440_automated-presales-delivery-automated-presales-delivery.png"
+                        alt="DispatchDynamo Logo"
+                        style="height: 48px; display: block; margin: 0 auto; padding-bottom: 5px;"
+                /> <span style="font-family: 'Shantell Sans', cursive; font-size: 2rem; color: white">  DispatchDynamo</span>
+            </a>
+            <div id="navbar" (click)="logout()">
+                <mat-icon class="icon" style="color: #313638">logout</mat-icon>
+                <span class="icons" style="color: #313638"> Logout</span>
+                <!-- <button class="btn btn-dark" (click)="logout()">Logout</button> -->
+            </div>
+        </mat-toolbar>
+        <!-- Add Content Here -->
+        <div class="container-fluid" style="margin-bottom: 20px; height: 100%">
+            <router-outlet> <div style="margin-top: 80px"></div></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

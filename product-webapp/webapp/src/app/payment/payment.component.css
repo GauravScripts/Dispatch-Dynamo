@@ -1,0 +1,87 @@
+/* Navbar Styles */
+body {
+    background-color: rgba(240, 240, 240, 0.5);
+  }
+.navbar {
+    background-color: #18283a;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    padding: 0 2rem;
+   
+    
+  }
+  
+  .navbar-logo {
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 8px;
+  }
+  
+  
+  /* Form Container Styles */
+  .form-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(240, 240, 240, 0.5);
+  }
+  
+  .form-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Form Group Styles */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-group input,
+  .form-group select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  /* Form Button Styles */
+  .form-button {
+    display: block;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .form-button:hover {
+    background-color: #0069d9;
+  }
+  
+  .form-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }

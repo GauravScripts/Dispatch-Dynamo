@@ -1,0 +1,49 @@
+#head{
+   font-family: "Poppins";
+   font-size: 36px;
+   font-weight: bolder;
+   margin-left: 550px;
+   color: rgb(74, 74, 160);
+   padding-top: 75px;
+}
+#main{
+  background-image: url("../../assets/b22.jpeg"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height:1000px; 
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+
+}
+
+
+  /* .card {
+    width: 190px;
+    height: 254px;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+   }
+
+
+   
+   
+   .card__content {
+    background: rgb(113, 114, 181);
+    border-radius: 17px;
+    width: 100%;
+    height: 100%;
+   } */
+
+   
+  
+.wrapper{
+  overflow-x: auto;
+  display: flex;
+ 
+}  
+.wrapper::-webkit-scrollbar{
+width:0;
+}
+  

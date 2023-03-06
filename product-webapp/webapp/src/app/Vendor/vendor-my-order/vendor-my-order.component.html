@@ -1,0 +1,133 @@
+<!-- <div class="form-group">
+    <label for="dateInput">Select date:</label>
+    <input type="date" id="dateInput" [(ngModel)]="selectedDate">
+</div> -->
+
+<div class="container-fluid">
+    <div
+        class="order my-3 bg-light"
+        *ngFor="
+            let order of orders
+                | paginate
+                    : { itemsPerPage: pageSize, currentPage: currentPage }
+        "
+    >
+        <div class="row">
+            <div class="col-lg-4">
+                <div
+                    class="d-flex flex-column justify-content-between order-summary"
+                >
+                    <div class="d-flex align-items-center">
+                        <div class="text-uppercase">
+                            Order #{{ order.trackingId }}
+                        </div>
+                        <div
+                            class="blue-label ms-auto text-uppercase"
+                            style="margin-left: 10px"
+                        >
+                            {{ order?.status }}
+                        </div>
+                    </div>
+                    <!-- <div class="fs-8">Products #03</div> -->
+                    <div class="fs-8">{{ order.orderDateAndTime }}</div>
+                    <!-- <div class="rating d-flex align-items-center pt-1">
+                    <img
+                        src="https://www.freepnglogos.com/uploads/like-png/like-png-hand-thumb-sign-vector-graphic-pixabay-39.png"
+                        alt=""
+                    />
+                    <span class="px-2">Rating:</span>
+                    <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span>
+                    <span class="far fa-star"></span>
+                </div> -->
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="d-sm-flex align-items-sm-start justify-content-sm-between">
+                    <div class="status" style="margin-top: 20px">
+                        Status : {{ order?.status }}
+                        <button mat-raised-button color="primary" (click)="openDialog(order)">Edit</button>
+                    </div>
+                    <button mat-raised-button id="packageHistory" color="primary" (click)="openDialog2(order)">Add package History</button>
+                    <div class="btn btn-primary text-uppercase" style="margin-top: 20px" > order info </div>
+                </div>
+
+                <div class="progressbar-track">
+                    <ul class="progressbar">
+                        <li
+                            id="step-1"
+                            class="text-muted {{
+                                order?.status.toLowerCase() === 'booked' ||
+                                order?.status.toLowerCase() === 'placed' ||
+                                order?.status.toLowerCase() === 'accepted' ||
+                                order?.status.toLowerCase() === 'packed' ||
+                                order?.status.toLowerCase() === 'shipped' ||
+                                order?.status.toLowerCase() === 'delivered'
+                                    ? 'green'
+                                    : ''
+                            }}"
+                        >
+                            <span class="fas fa-gift"></span>
+                        </li>
+                        <li
+                            id="step-2"
+                            class="text-muted {{
+                                order?.status.toLowerCase() === 'accepted' ||
+                                order?.status.toLowerCase() === 'packed' ||
+                                order?.status.toLowerCase() === 'shipped' ||
+                                order?.status.toLowerCase() === 'delivered'
+                                    ? 'green'
+                                    : ''
+                            }}"
+                        >
+                            <span class="fas fa-check"></span>
+                        </li>
+                        <li
+                            id="step-3"
+                            class="text-muted {{
+                                order?.status.toLowerCase() === 'packed' ||
+                                order?.status.toLowerCase() === 'shipped' ||
+                                order?.status.toLowerCase() === 'delivered'
+                                    ? 'green'
+                                    : ''
+                            }}"
+                        >
+                            <span class="fas fa-box"></span>
+                        </li>
+                        <li
+                            id="step-4"
+                            class="text-muted {{
+                                order?.status.toLowerCase() === 'shipped' ||
+                                order?.status.toLowerCase() === 'delivered'
+                                    ? 'green'
+                                    : ''
+                            }}"
+                        >
+                            <span class="fas fa-truck"></span>
+                        </li>
+                        <li
+                            id="step-5"
+                            class="text-muted {{
+                                order?.status.toLowerCase() === 'delivered'
+                                    ? 'green'
+                                    : ''
+                            }}"
+                        >
+                            <span class="fas fa-box-open"></span>
+                        </li>
+                    </ul>
+                    <div id="tracker"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <pagination-controls
+        (pageChange)="currentPage = $event"
+        class="float-right"
+    ></pagination-controls>
+</div>
+
+
+

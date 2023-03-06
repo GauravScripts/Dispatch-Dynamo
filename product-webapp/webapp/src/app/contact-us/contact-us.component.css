@@ -1,0 +1,92 @@
+
+.modal-header {
+    background-color: rgba(0, 123, 255, 0.2);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 123, 255, 0.5);
+  }
+  
+  .modal-header h3.modal-title {
+    color: rgba(0, 123, 255, 1);
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .modal-header p {
+    color: rgba(0, 123, 255, 0.8);
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .close {
+    color: rgba(0, 123, 255, 0.8);
+    font-size: 2rem;
+    border: none;
+    background-color: transparent;
+  }
+  
+  form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 2rem;
+  }
+  
+  .Label {
+    color: rgba(0, 123, 255, 0.8);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  input.form-control {
+    background-color: rgba(0, 123, 255, 0.05);
+    border: 1px solid rgba(0, 123, 255, 0.2);
+    border-radius: 5px;
+    color: rgba(0, 123, 255, 0.8);
+    font-size: 1.2rem;
+    padding: 1rem;
+    width: 100%;
+  }
+  
+  input.form-control:focus {
+    border-color: rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.2);
+    outline: none;
+  }
+  
+  button.btn.btn-primary.SendDetails {
+    background-color: rgba(0, 123, 255, 1);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1rem;
+    width: 50%;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  button.btn.btn-primary.SendDetails:hover {
+    background-color: rgba(0, 123, 255, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  .back a{
+    color: white;
+  }
+
+  
+
+
+
+

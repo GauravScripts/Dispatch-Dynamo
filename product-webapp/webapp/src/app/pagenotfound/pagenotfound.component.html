@@ -1,0 +1,53 @@
+<!-- 
+<div class="error">
+  <div>Page not found</div><br><br><br><br>
+  <div id="FZF">404</div><br><br><br><br>
+  <div>Swim Home, Friend</div>
+</div>
+<div class="sun"></div>
+<div class="clouds">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+<div class="birds"></div>
+<div class="sea">
+  <div class="wave w-1"></div>
+  <div class="wave w-2"></div>
+  <div class="fish"><span></span><span></span><span></span>
+  </div>
+</div>
+<div class="bottom">
+  <div class="grass"><span> </span><span> </span><span> </span>
+  </div>
+  <div class="grass"><span> </span><span> </span><span> </span>
+  </div>
+  <div class="grass"><span> </span><span> </span><span> </span>
+  </div>
+  <div class="grass"><span> </span><span> </span><span> </span>
+  </div>
+  <div class="circle"><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="circle"><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="circle"><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="circle"><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="grass_tw"></div>
+  <div class="grass_tw"></div>
+  <div class="grass_tw"></div>
+</div>
+ -->
+
+
+<div class="d-flex flex-column align-items-center text-center">
+  <form enctype="multipart/form-data">
+    <input type="file" value="select" #selectFile (change)="onFileSelected($event)">
+  </form>
+  <!-- <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle image" width="150"> -->
+</div>
+<div>
+  <button class="btn btn-success" style="width: 10rem;margin: 2rem; " (click)="onUpload()">Upload Image</button> 
+  <button class="btn btn-danger" style="width: 10rem;">Delete</button>
+</div>
