@@ -11,7 +11,7 @@ Error: node_modules/@tensorflow/tfjs-core/dist/hash_util.d.ts:5:69 - error TS230
 5 export declare function fingerPrint64(s: Uint8Array, len?: number): Long;
 ~~~~
 ## Add import * as Long from "long"; in hash_util.d.ts file before ng serve
-<img src="https://s10.gifyu.com/images/homedf4c4bab03fd9fc4.gif">
+<a href="https://s10.gifyu.com/images/homedf4c4bab03fd9fc4.gif">
 
 
 
