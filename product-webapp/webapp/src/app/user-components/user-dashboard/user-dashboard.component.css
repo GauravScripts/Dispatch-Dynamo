@@ -1,282 +1,96 @@
-/* Set up the toolbar */
-mat-toolbar {
-  background-color: #003f5c;
-  color: #fff;
-  font-weight: bold;
-  height: 80px;
+ .card {
+  width: 400px;
+  height: 300px;
+  background: whitesmoke;
+  transition: .2s linear;
+  box-shadow: 1px 1px 10px lightslategray;
+  cursor: default;
+  padding: 1rem;
+  margin-top: 2rem;
+  display: inline-block;
+  margin-left:40px ;
+  }
+
+.abc{
+display: inline-block;
+
+}
+
+.user-name {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  animation: slideInDown 0.5s ease;
+  justify-content: flex-start;
+  gap: 10px;
 }
 
-/* Set up the menu button */
-button[mat-icon-button] {
-  color: #fff;
-  font-size: 28px;
-  animation: rotateIn 0.5s ease;
+.name {
+  font-size: 20px;
 }
 
-/* Set up the user icon */
-i.fas.fa-user {
-  margin-left: 10px;
-  font-size: 24px;
-  animation: bounceInDown 0.5s ease;
-}
-.logout-button {
-  background-color: #f44336;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.logout-button:hover {
-  background-color: #c62828;
-}
-/* Set up the sidenav container */
-mat-sidenav-container {
-  height: calc(100vh - 80px);
-}
-
-/* Set up the sidenav */
-mat-sidenav {
-  background-color: #fff;
-  width: 200px;
-  animation: slideInLeft 0.5s ease;
-}
-
-/* Set up the sidenav links */
-a[mat-list-item] {
-  color: #000;
+.role {
+  font-size: 15px;
+  color: rgb(225, 33, 33);
   font-weight: bold;
-  transition: color 0.3s ease;
+  text-transform: lowercase;
+  background-color: lightskyblue;
+  padding: 4px 10px;
+  border-radius: 15px;
+  width: fit-content;
 }
 
-a[mat-list-item]:hover {
-  color: #003f5c;
-}
 
-/* Set up the sidenav content */
-mat-sidenav-content {
-  padding: 20px;
-  animation: fadeIn 0.5s ease;
-}
-
-/* Set up the container */
-.container {
-  margin-top: 20px;
-}
-
-/* Set up the cards */
-mat-card {
-  background-color: blanchedalmond;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-mat-card:hover {
-  transform: scale(1.1);
-}
-
-/* Set up the icons */
-.icon {
-  font-size: 48px;
-  color: #003f5c;
-  margin-bottom: 20px;
-}
-
-/* Set up the animations */
-@keyframes slideInDown {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-@keyframes rotateIn {
-  from {
-    transform: rotate(-180deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes bounceInDown {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Set up the responsive layout */
-@media (max-width: 768px) {
-  .col-md-4 {
-    margin-bottom: 20px;
-   
-  }
-}
-/* Animate the icons inside the mat-cards */
-.icon {
-  animation: pulse 2s infinite;
- 
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* Increase the size of the icons */
-.icon {
-  font-size: 32px;
-  width: 32px;
-  height: 32px;
-  line-height: 32px;
-  text-align: center;
-  border-radius: 50%;
-  /* background-color: #fff;
-  color: #000; */
-  margin-right: 10px;
-  /* color: #f5f5f5; */
-}
-.mat-icon-circle {
-  font-size: 48px; /* set a larger font size */
-  width: 96px; /* set a larger width */
-  height: 96px; /* set a larger height */
+.card-bottom-part {
+  width: 100%;
   display: flex;
+  margin: auto;
+  justify-self: center;
+  border: 1px solid rgb(231, 227, 227);
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  background-color: rgb(137, 178, 217);
+}
+
+
+img {
+  width: 100%;
+}
+
+.bottom-part {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  margin-right: 16px;
-  border-radius: 50%;
-  background-color: #f0f0f0;
-  color: #333;
-}
-/* Add animation to sidenav items */
-mat-nav-list a {
-  transition: all 0.2s ease-in-out;
 }
 
-mat-nav-list a:hover {
-  background-color: #f5f5f5;
-  transform: translateX(5px);
-}
-
-/* Add animation to sidenav icons */
-mat-nav-list a mat-icon {
-  transition: all 0.2s ease-in-out;
-}
-
-mat-nav-list a:hover mat-icon {
+.bottom-part:hover>.link {
   transform: scale(1.1);
 }
 
-.wrapper{
-  overflow-x: auto;
-  display: flex;
- 
-}  
-.wrapper::-webkit-scrollbar{
-width:0;
+
+.bottom-part:first-child {
+  border-right: 1px solid rgb(231, 227, 227);
 }
+
+.main{
+  padding: 1rem;
+}
+
+.cities{
+  overflow:auto;
+}
+
+hr {
+  height: 2px;
+  border-color: black;
+  border-style: solid;
+}
+
+h1
+{
+  font-size: 30px;
+  margin: 25px;
+  background-color: antiquewhite;
   
-#main{
-   /* The image used */
-  /* Used if the image is unavailable */
-  height:1000px; 
-  /* Do not repeat the image */
- 
-
-}
-
-.flip-card {
-  background-color: transparent;
-  width: 190px;
-  height: 254px;
-  perspective: 1000px;
-  font-family: sans-serif;
-}
-
-.title {
-  font-size: 1.5em;
-  font-weight: 900;
-  text-align: center;
-  margin: 0;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border: 1px solid coral;
-  border-radius: 1rem;
-}
-
-.flip-card-front {
-  background: linear-gradient(120deg, bisque 60%, rgb(255, 231, 222) 88%,
-     rgb(255, 211, 195) 40%, rgba(255, 127, 80, 0.603) 48%);
-  color: coral;
-}
-
-.flip-card-back {
-  background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%,
-     bisque 40%, rgb(255, 185, 160) 78%);
-  color: white;
-  transform: rotateY(180deg);
 }

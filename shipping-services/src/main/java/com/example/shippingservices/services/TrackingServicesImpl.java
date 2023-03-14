@@ -38,8 +38,9 @@ public class TrackingServicesImpl implements TrackingServices{
         return dis;
     }
     @Override
-    public CityData addData(CityData city) {
-        return cityDataRepository.save(city);
+    public List<CityData> addData(List<CityData> city) {
+
+        return cityDataRepository.saveAll(city);
     }
 
     public static double distance(double lat1,double lat2, double lon1,double lon2)

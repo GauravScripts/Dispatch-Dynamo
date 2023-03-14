@@ -1,7 +1,7 @@
-<!-- <div class="form-group">
-    <label for="dateInput">Select date:</label>
-    <input type="date" id="dateInput" [(ngModel)]="selectedDate">
-</div> -->
+
+<div class="navbar">
+    <h1 class="heading">Orders Received</h1>
+</div>
 
 <div class="container-fluid">
     <div
@@ -47,11 +47,16 @@
             <div class="col-lg-8">
                 <div class="d-sm-flex align-items-sm-start justify-content-sm-between">
                     <div class="status" style="margin-top: 20px">
+                 
                         Status : {{ order?.status }}
-                        <button mat-raised-button color="primary" (click)="openDialog(order)">Edit</button>
-                    </div>
-                    <button mat-raised-button id="packageHistory" color="primary" (click)="openDialog2(order)">Add package History</button>
-                    <div class="btn btn-primary text-uppercase" style="margin-top: 20px" > order info </div>
+                  
+                    
+                
+                        <button class="btn btn-info" style="margin-left: 20px ;" (click)="openDialog(order)">Update</button>
+                                      
+                </div>
+                    <!-- <button mat-raised-button id="packageHistory" color="primary" ></button> -->
+                    <div class="btn btn-primary text-uppercase" style="margin-top: 20px" (click)="openDialog2(order)"> Add package History </div>
                 </div>
 
                 <div class="progressbar-track">

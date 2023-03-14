@@ -21,10 +21,10 @@ export class VUpdatepriceComponent {
   
 
   update(updateprice:NgForm){
-    console.log(updateprice.value)
+
     this.V_service.updatePrice(updateprice.value).subscribe(data => 
       {
-        console.log(data)
+
         this.getInternationalPrice();
         this.getDomesticPrice();
       }) 
@@ -33,7 +33,7 @@ export class VUpdatepriceComponent {
   getInternationalPrice(){
     this.V_service.getInternationalPrice().subscribe((data:any) =>{
       this.price1=data
-      console.log(this.price1);
+
     });
   }
 
@@ -43,9 +43,4 @@ export class VUpdatepriceComponent {
       console.log(this.price2);
     });
   }
-
-
-
-
-  
 }

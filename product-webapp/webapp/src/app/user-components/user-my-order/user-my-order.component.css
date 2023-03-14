@@ -255,7 +255,22 @@ nav ul li a .cart::after {
     width: 100%;
     top: 25px;
 }
-
+.navbar{
+    padding: 20px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width:100%;
+    margin: 1rem;
+ }
+ 
+ .heading {
+     font-size: 25px;
+     font-weight: bold;
+     margin: 0;
+ }
 #step-1::after {
     content: "Placed";
 }
@@ -363,4 +378,20 @@ nav ul li a .cart::after {
     height: 100%;
     padding-top: 20px;
   }
+
+  .navbar {
+    background-color: #d4b7b7; /* Set the background color */
+    color: #fff; /* Set the text color */
+    height: 60px; /* Set the height */
+    display: flex; /* Set display to flex */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+  }
+  
+  .heading {
+    font-size: 3.5rem; /* Set the font size */
+    margin: 0; /* Remove any default margin */
+    text-align: center; /* Center the text */
+  }
+  
     

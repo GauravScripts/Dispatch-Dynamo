@@ -1,77 +1,92 @@
 <div id="main">
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <mat-card [routerLink]="['/usidenav/userOrder']">
-                <mat-card-header>
-                    <mat-card-title>My Orders</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <mat-icon class="icon" mat-card-avatar
-                        ><i class="fas fa-shopping-bag"></i
-                    ></mat-icon>
-                    <p>View your previous orders</p>
-                </mat-card-content>
-            </mat-card>
-        </div>
-        <div class="col-md-4">
-            <mat-card [routerLink]="['/usidenav/bookOrder']">
-                <mat-card-header>
-                    <mat-card-title >Book Order</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <mat-icon class="icon" mat-card-avatar
-                        ><i class="fas fa-book"></i
-                    ></mat-icon>
-                    <p>Place a new order for a book</p>
-                </mat-card-content>
-            </mat-card>
-        </div>
-        <div class="col-md-4">
-            <mat-card [routerLink]="['/usidenav/userTracking']">
-                <mat-card-header>
-                    <mat-card-title>Track Order</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <mat-icon class="icon" mat-card-avatar
-                        ><i class="fas fa-truck"></i
-                    ></mat-icon>
-                    <p>Track the status of your current order</p>
-                </mat-card-content>
-            </mat-card>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <mat-card [routerLink]="['/usidenav/userOrder']">
+                    <mat-card-header>
+                        <mat-card-title>My Orders</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <mat-icon class="icon" mat-card-avatar><i class="fas fa-shopping-bag"></i></mat-icon>
+                        <p>View your previous orders</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col-md-4">
+                <mat-card [routerLink]="['/usidenav/bookOrder']">
+                    <mat-card-header>
+                        <mat-card-title>Book Order</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <mat-icon class="icon" mat-card-avatar><i class="fas fa-book"></i></mat-icon>
+                        <p>Place a new order for a book</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col-md-4">
+                <mat-card [routerLink]="['/usidenav/userTracking']">
+                    <mat-card-header>
+                        <mat-card-title>Track Order</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <mat-icon class="icon" mat-card-avatar><i class="fas fa-truck"></i></mat-icon>
+                        <p>Track the status of your current order</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
         </div>
     </div>
+   
+ <div *ngFor="let a of searchcities" class="abc">
+    <div class="card" >
+        <div class="row row-2">
+            <div class="col col-9">
+                <p class="name">{{a.companyName}}</p>
+                <p class="role"> vendor </p>
+            </div>
+            <div class="col col-3">
+                <img [src]="imageUrl" class="photo">
+            </div>
+        </div>
+        <hr>
+        <div class="row main">  
+            <p> Office email : {{a.emailId}}</p>
+            <p>OfficeContact : {{a.officeContact}}</p>
+        </div>
+        <hr>
+        <div class="row-2 card-bottom-part">
+            <div class="bottom-part">
+                <a href="mailto: {{a.emailId}}">
+                    <i class="fa-solid fa-envelope"></i> &nbsp; &nbsp; Email
+                </a>
+            </div>
+            <div class="bottom-part">
+                <a href="tel: {{a.officeContact}}">
+                    <i class="fa-solid fa-phone"></i> &nbsp; &nbsp; Mobile
+                </a>
+            </div>
+        </div>
+
+    </div>
+ </div>
+
 </div>
 
 
 
-
-<div  class="wrapper">
-    <mat-card class="example-card"  *ngFor ="let cities of searchcities  " style="width
-    :300px;border: 2px solid black;margin-left: 50px; background-color: blanchedalmond;   height: 300px;border-radius: 10px;margin-top: 100px; background-color: blanchedalmond;">
-     
-           
-         <div class="full" style="font-size: 15px;width:300px;color: black; font-weight: bold; padding-left: 20px;padding-top: 20px;">
-
-          <mat-card-content>
-        <p >EmailId: {{cities.emailId}}</p>
-        <p>Name: {{cities.name}}</p>      
-        <p>
-         CompanyName: {{cities.companyName}}
-        </p>
-        <p>
-          OfficeContact: {{cities.officeContact}}
-         </p>
-         <p>
-          Cities:  {{cities.cities}}
-         </p>
-      </mat-card-content>
-  </div>
-    </mat-card>
-  </div>
+<!-- *ngFor="let cities of searchcities " -->
 
 
-
-
-
-</div>
+<!-- <mat-card-content>
+                    <p>EmailId: {{cities.emailId}}</p>
+                    <p>Name: {{cities.name}}</p>
+                    <p>
+                        CompanyName: {{cities.companyName}}
+                    </p>
+                    <p>
+                        OfficeContact: {{cities.officeContact}}
+                    </p>
+                    <p>
+                        Cities: {{cities.cities}}
+                    </p>
+                </mat-card-content> -->

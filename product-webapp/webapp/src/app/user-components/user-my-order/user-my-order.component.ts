@@ -69,6 +69,7 @@ export class UserMyOrderComponent {
         .get("http://localhost:7575/getAllShipmentOfUser/"+ decoded.user_email)
             .subscribe((orders: any[]) => {
                 this.orders = orders;
+                this.orders.reverse();
                 console.log(this.orders)
             });
     }

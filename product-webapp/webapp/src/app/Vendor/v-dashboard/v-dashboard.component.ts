@@ -29,10 +29,10 @@ export class VDashboardComponent implements OnInit {
       iat: number;
     }
 
-    console.log(this.authService.getToken());
+
     let decoded = jwt_decode(localStorage.getItem("Token")) as DecodedToken;
-    console.log(decoded);
-    console.log(decoded.user_email);
+
+
 
     
     // Call the API endpoint to fetch the chart data
@@ -76,7 +76,7 @@ export class VDashboardComponent implements OnInit {
             name: 'Direct',
             type: 'bar',
             barWidth: '50%',
-            data: [2,23,data,0,0,0,0,0,0,0,0,0], // Use the values from the fetched data
+            data: [0,0,data,0,0,0,0,0,0,0,0,0], // Use the values from the fetched data
           }
         ]
       };

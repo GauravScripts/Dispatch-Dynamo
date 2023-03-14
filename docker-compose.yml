@@ -1,4 +1,4 @@
-version: "3.9"
+version: "2"
 services:
   eureka-server:
     build: eureka-server/
@@ -7,7 +7,7 @@ services:
     network_mode: "host"
     hostname: localhost
     ports:
-      - "8076:8076"
+      - "8761:8761"
   api-gateway:
     build: api-gateway/
     container_name: api-gateway
@@ -34,20 +34,20 @@ services:
     image: mysql:latest
     container_name: mysql
     restart: always
+    network_mode: "host"
     hostname: localhost
-    network_mode: host
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: 'admin'
+      MYSQL_ROOT_PASSWORD: 'root'
       MYSQL_USERNAME: root
       MYSQL_PASSWORD: root
       MYSQL_ALLOW_EMPTY_PASSWORD: "YES"
       MYSQL_DATABASE: CargoPluse
-  mongodb:
+  mongo-container:
     image: mongo:latest
     container_name: mongo-container
-    network_mode: host
+    network_mode: "host"
     hostname: localhost
     ports:
       - 27017:27017
@@ -55,7 +55,8 @@ services:
     image: neo4j:latest
     container_name: neo4jService
     restart: always
-    network_mode: host
+    network_mode: "host"
+    hostname: localhost
     ports:
       - "7474:7474"
       - "7687:7687"
@@ -65,7 +66,8 @@ services:
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq
-    network_mode: host
+    network_mode: "host"
+    hostname: localhost
     ports:
       - "5672:5672"
       - "15672:15672"
@@ -76,6 +78,7 @@ services:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.5.2
     container_name: elasticsearch
     network_mode: "host"
+    hostname: localhost
     environment:
       - node.name=elasticsearch
       - cluster.name=elasticsearch
@@ -91,6 +94,7 @@ services:
     build : authentication-services
     restart: always
     network_mode: "host"
+    hostname: localhost
     ports:
       - "9201:9201"
     depends_on:
@@ -103,10 +107,11 @@ services:
     build : chat-service
     restart: always
     network_mode: "host"
+    hostname: localhost
     ports:
       - "9205:9205"
     depends_on:
-      - mongodb
+      - mongo-container
       - api-gateway
       - eureka-server
   feedback-service:
@@ -115,10 +120,11 @@ services:
     build : feedback-service
     restart: always
     network_mode: "host"
+    hostname: localhost
     ports:
       - "7003:7003"
     depends_on:
-      - mongodb
+      - mongo-container
       - api-gateway
       - eureka-server
   Mail-services:
@@ -127,10 +133,11 @@ services:
     build : MailServiceApp
     restart: always
     network_mode: "host"
+    hostname: localhost
     ports:
       - "9202:9202"
     depends_on:
-      - mongodb
+      - mongo-container
       - api-gateway
       - eureka-server
   recommendation-services:
@@ -139,6 +146,7 @@ services:
     build : Recommendation-Service
     restart: always
     network_mode: "host"
+    hostname: localhost
     ports:
       - "8082:8082"
     depends_on:
@@ -151,10 +159,11 @@ services:
     build : shipping-services
     restart: always
     network_mode: "host"
+    hostname: localhost
     ports:
       - "7575:7575"
     depends_on:
-      - mongodb
+      - mongo-container
       - api-gateway
       - eureka-server
   user-profile:
@@ -163,10 +172,11 @@ services:
     build : user-profile
     restart: always
     network_mode: "host"
+    hostname: localhost
     ports:
       - "8085:8085"
     depends_on:
-      - mongodb
+      - mongo-container
       - api-gateway
       - eureka-server
   vendor-service:
@@ -175,6 +185,7 @@ services:
     build : vendor-service
     restart: always
     network_mode: "host"
+    hostname: localhost
     ports:
       - "8083:8083"
     depends_on:

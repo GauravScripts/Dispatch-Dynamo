@@ -1,5 +1,18 @@
-#packageHistory{
-    
+.navbar{
+   padding: 20px;
+   color: black;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 60px;
+   width:100%;
+   margin: 1rem;
+}
+
+.heading {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0;
 }
 
 .text-muted{

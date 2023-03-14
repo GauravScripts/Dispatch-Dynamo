@@ -19,7 +19,6 @@ interface DecodedToken {
   interface User {
     emailId: string;
     name: String;
-    // mobile: String;
   }
 @Component({
     selector: "app-user-profile",
@@ -44,7 +43,6 @@ export class UserProfileComponent {
     console.log(decoded.user_email);
 
         this.userService.getProfile(decoded.user_email).subscribe((res) => {
-            console.log("Hii user");
             this.user = res;
             this.userDetail=res;
 
@@ -54,9 +52,5 @@ export class UserProfileComponent {
    editUser() {
 
         this.router.navigateByUrl("/usidenav/editUserProfile")
-    }
-
-    deleteProfile() {
-        // code to delete the user profile
     }
 }

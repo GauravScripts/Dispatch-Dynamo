@@ -1,310 +1,219 @@
 <!-- Nav bar -->
-<div id ="blah">
-<div class="navbar">
-    <h1 class="heading" >BOOK YOUR SHIPMENT</h1>
-  </div>
-  
-  <div style="margin-top: 1px;">
-    <!-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, ea autem debitis eos sit voluptates nulla veritatis ullam atque eaque error enim culpa quaerat perferendis, expedita soluta impedit iste incidunt? -->
-   
- <agm-map >
- <agm-marker [longitude]="longitudecity1" [latitude]="latitudecity1"></agm-marker>
- <agm-marker [longitude]="longitudecity2" [latitude]="latitudecity2"></agm-marker>
- </agm-map>
- </div> 
+<div id="blah">
+    <div class="navbar">
+        <h1 class="heading">BOOK YOUR SHIPMENT</h1>
+    </div>
 
-<!-- 
+    <div style="margin-top: 1px;">
+        <!-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, ea autem debitis eos sit voluptates nulla veritatis ullam atque eaque error enim culpa quaerat perferendis, expedita soluta impedit iste incidunt? -->
+
+        <agm-map>
+            <agm-marker [longitude]="longitudecity1" [latitude]="latitudecity1"></agm-marker>
+            <agm-marker [longitude]="longitudecity2" [latitude]="latitudecity2"></agm-marker>
+        </agm-map>
+    </div>
+
+    <!-- 
 map and form -->
-<div  id="super">
+    <div id="super">
 
-  <div id="form">
+        <div id="form">
 
 
-    <form [formGroup]="transportForm" id="form1">
-        <mat-horizontal-stepper linear #stepper>
-            <mat-step [stepControl]="transportForm.controls['weight']">
-                <ng-template matStepLabel>Package details</ng-template>
-                <div >
-                   
-                    <div class="form-group">
-                        <label for="weight">Weight (gm):</label>
-                        <input
-                            type="number"
-                            class="form-control bg-light"
-                            id="weight"
-                            formControlName="weight"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="weight">Length (mm):</label>
-                        <input
-                            type="number"
-                            class="form-control bg-light"
-                            id="weight"
-                            formControlName="length"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="weight">Breadth (mm):</label>
-                        <input
-                            type="number"
-                            class="form-control bg-light"
-                            id="weight"
-                            formControlName="breadth"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="weight">Height (mm):</label>
-                        <input
-                            type="number"
-                            class="form-control bg-light"
-                            id="weight"
-                            formControlName="height"
-                        />
-                    </div>
-                </div>
-             
-                <div>
-                    <button
-                        mat-button
-                        color="primary"
-                        class="btn btn-primary next"
-                        matStepperNext
-                    >
-                        Next
-                    </button>
-                </div>
-            </mat-step>
-    
-            <mat-step [stepControl]="transportForm.get('from')">
-                <ng-template matStepLabel>From</ng-template>
-                <div formGroupName="from">
-                    <div class="form-group">
-                        <label for="fromAddress">Address line:</label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="fromAddress"
-                            formControlName="addressLine1"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="fromCity">City:</label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="fromCity"
-                            formControlName="city"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="fromState">State:</label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="fromState"
-                            formControlName="state"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="fromCountry">Country:</label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="fromCountry"
-                            formControlName="country"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="fromZipcode">Zipcode:</label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="fromZipcode"
-                            formControlName="zipcode"
-                        />
-                    </div>
-                </div>
-                <div>
-                    <button mat-button class="btn btn-primary back" matStepperPrevious id="btn1">
-                        Back
-                    </button>
-                    <button mat-button class="btn btn-primary next" matStepperNext id="btn2">
-                        Next
-                    </button>
-                </div>
-            </mat-step>
-    
-            <mat-step [stepControl]="transportForm.get('to')">
-                <ng-template matStepLabel>To</ng-template>
-                <div formGroupName="to">
-                    <div class="form-group">
-                        <label for="toAddress">Address line:</label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="toAddress"
-                            formControlName="addressLine1"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="toCity">City:</label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="toCity"
-                            formControlName="city"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="toState">State:</label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="toState"
-                            formControlName="state"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="toCountry">Country:</label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="toCountry"
-                            formControlName="country"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="toZipcode">Zipcode:</label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="toZipcode"
-                            formControlName="zipcode"
-                        />
-                    </div>
-                </div>
-                <div>
-                    <button mat-button class="btn btn-primary back" matStepperPrevious id="btn1">
-                        Back
-                    </button>
-                    <button mat-button class="btn btn-primary next" matStepperNext>
-                        Next
-                    </button>
-                </div>
-            </mat-step>
-            <mat-step [stepControl]="transportForm.controls['modeOfTransport']">
-                <ng-template matStepLabel>Mode of Transport</ng-template>
-                <form [formGroup]="transportForm">
-                    <div class="form-group">
-                        <label for="modeOfTransport">Mode of Transport:</label>
-                        <mat-select
-                            class="form-control"
-                            id="modeOfTransport"
-                            formControlName="modeOfTransport"
-                            style="background-color: white"
-                        >
-                            <mat-option value="Railways">Railways</mat-option>
-                            <mat-option value="Air">Air</mat-option>
-                            <mat-option value="Road">Road</mat-option>
-                        </mat-select>
-                    </div>
-                    <div class="form-group">
-                        <label for="servicetype">Service Type</label>
-                        <mat-select
-                            class="form-control"
-                            id="servicetype"
-                            formControlName="servicetype"
-                            style="background-color: white"
-                        >
-                            <mat-option value="Express Type">Express Service</mat-option>
-                            <mat-option value="Normal Service">normal</mat-option>
-                        </mat-select>
-                    </div>
-                    <div class="form-group">
-                        <label for="shipmentType">Payment Mode</label>
-                        <mat-select
-                            class="form-control"
-                            id="servicetype"
-                            formControlName="shipmentType"
-                            style="background-color: white"
-                        >
-                            <mat-option value="International">International</mat-option>
-                            <mat-option value="Domestic">Domestic</mat-option>
-                        </mat-select>
-                    </div>
-                    <button
-                        mat-button
-                        class="btn btn-primary back-btn small back"
-                        matStepperPrevious
-                        id="btn4"
-                       
-                    >
-                        Back
-                    </button>
-                </form>
-                
-                <span> <button
-                    type="submit"
-                    class="btn btn-primary next"
-                    (click)="onSubmit()"
-                    id="btn3"
-                >
-                    Submit
-                </button>
-            </span>
-            </mat-step>
-        </mat-horizontal-stepper>
-    </form>
-  </div>
+            <form [formGroup]="transportForm" id="form1">
+                <mat-horizontal-stepper linear #stepper>
+                    <mat-step [stepControl]="transportForm.controls['weight']">
+                        <ng-template matStepLabel>Package details</ng-template>
+                        <div>
+
+                            <div class="form-group">
+                                <label for="weight">Weight (gm):</label>
+                                <input type="number" class="form-control bg-light" id="weight"
+                                    formControlName="weight" />
+                            </div>
+                            <div class="form-group">
+                                <label for="weight">Length (mm):</label>
+                                <input type="number" class="form-control bg-light" id="weight"
+                                    formControlName="length" />
+                            </div>
+                            <div class="form-group">
+                                <label for="weight">Breadth (mm):</label>
+                                <input type="number" class="form-control bg-light" id="weight"
+                                    formControlName="breadth" />
+                            </div>
+                            <div class="form-group">
+                                <label for="weight">Height (mm):</label>
+                                <input type="number" class="form-control bg-light" id="weight"
+                                    formControlName="height" />
+                            </div>
+                        </div>
+
+                        <div class="btn-next">
+                            <button mat-button class="btn btn-primary" matStepperNext>
+                                Next
+                            </button>
+                        </div>
+                    </mat-step>
+
+                    <mat-step [stepControl]="transportForm.get('from')">
+                        <ng-template matStepLabel>From</ng-template>
+                        <div formGroupName="from">
+                            <div class="form-group">
+                                <label for="fromAddress">Address line:</label>
+                                <input type="text" class="form-control" id="fromAddress"
+                                    formControlName="addressLine1" />
+                            </div>
+                            <div class="form-group">
+                                <label for="fromCity">City:</label>
+                                <input type="text" class="form-control" id="fromCity" formControlName="city" />
+                            </div>
+                            <div class="form-group">
+                                <label for="fromState">State:</label>
+                                <input type="text" class="form-control" id="fromState" formControlName="state" />
+                            </div>
+                            <div class="form-group">
+                                <label for="fromCountry">Country:</label>
+                                <input type="text" class="form-control" id="fromCountry" formControlName="country" />
+                            </div>
+                            <div class="form-group">
+                                <label for="fromZipcode">Zipcode:</label>
+                                <input type="text" class="form-control" id="fromZipcode" formControlName="zipcode" />
+                            </div>
+                        </div>
+                        <div class="btn-next-back">
+                            <button mat-button class="btn btn-primary back"  matStepperPrevious>
+                                Back
+                            </button>
+                            <button mat-button class="btn btn-primary " matStepperNext>
+                                Next
+                            </button>
+                        </div>
+                    </mat-step>
+
+                    <mat-step [stepControl]="transportForm.get('to')">
+                        <ng-template matStepLabel>To</ng-template>
+                        <div formGroupName="to">
+                            <div class="form-group">
+                                <label for="toAddress">Address line:</label>
+                                <input type="text" class="form-control" id="toAddress" formControlName="addressLine1" />
+                            </div>
+                            <div class="form-group">
+                                <label for="toCity">City:</label>
+                                <input type="text" class="form-control" id="toCity" formControlName="city" />
+                            </div>
+                            <div class="form-group">
+                                <label for="toState">State:</label>
+                                <input type="text" class="form-control" id="toState" formControlName="state" />
+                            </div>
+                            <div class="form-group">
+                                <label for="toCountry">Country:</label>
+                                <input type="text" class="form-control" id="toCountry" formControlName="country" />
+                            </div>
+                            <div class="form-group">
+                                <label for="toZipcode">Zipcode:</label>
+                                <input type="text" class="form-control" id="toZipcode" formControlName="zipcode" />
+                            </div>
+                        </div>
+                        <div class="btn-next-back">
+                            <button mat-button class="btn btn-primary back" matStepperPrevious>
+                                Back
+                            </button>
+                            <button mat-button class="btn btn-primary " matStepperNext>
+                                Next
+                            </button>
+                        </div>
+                    </mat-step>
+                    <mat-step [stepControl]="transportForm.controls['modeOfTransport']">
+                        <ng-template matStepLabel>Mode of Transport</ng-template>
+                        <form [formGroup]="transportForm">
+                            <div class="form-group">
+                                <label for="modeOfTransport">Mode of Transport:</label>
+                                <mat-select class="form-control" id="modeOfTransport" formControlName="modeOfTransport"
+                                    style="background-color: white">
+                                    <mat-option value="Railways">Railways</mat-option>
+                                    <mat-option value="Air">Air</mat-option>
+                                    <mat-option value="Road">Road</mat-option>
+                                </mat-select>
+                            </div>
+                            <div class="form-group">
+                                <label for="servicetype">Service Type</label>
+                                <mat-select class="form-control" id="servicetype" formControlName="servicetype"
+                                    style="background-color: white">
+                                    <mat-option value="Express Type">Express Service</mat-option>
+                                    <mat-option value="Normal Service">normal</mat-option>
+                                </mat-select>
+                            </div>
+                            <div class="form-group">
+                                <label for="shipmentType">Payment Mode</label>
+                                <mat-select class="form-control" id="servicetype" formControlName="shipmentType"
+                                    style="background-color: white">
+                                    <mat-option value="International">International</mat-option>
+                                    <mat-option value="Domestic">Domestic</mat-option>
+                                </mat-select>
+                            </div>
+                            <div class="btn-next-back">
+                                <button mat-button class="btn btn-primary back" matStepperPrevious>
+                                    Back
+                                </button>
+                                <button type="submit" class="btn btn-success" (click)="onSubmit()">
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                    </mat-step>
+                </mat-horizontal-stepper>
+            </form>
+        </div>
 
 
 
 
-  <!-- pagination -->
-</div>
-  <div class="table-container">
-    <mat-table [dataSource]="vendors" class="mat-table">
-      <ng-container matColumnDef="vendorId">
-        <mat-header-cell *matHeaderCellDef class="mat-header"> Vendor ID </mat-header-cell>
-        <mat-cell *matCellDef="let element" class="mat-cell">
-          {{ element.vendorId }}
-        </mat-cell>
-      </ng-container>
-      <ng-container matColumnDef="vendorName">
-        <mat-header-cell *matHeaderCellDef class="mat-header"> Vendor Name </mat-header-cell>
-        <mat-cell *matCellDef="let element" class="mat-cell">
-          {{ element.vendorName }}
-        </mat-cell>
-      </ng-container>
-      <ng-container matColumnDef="vendorContact">
-        <mat-header-cell *matHeaderCellDef class="mat-header"> Vendor Contact </mat-header-cell>
-        <mat-cell *matCellDef="let element" class="mat-cell">
-          {{ element.vendorContact }}
-        </mat-cell>
-      </ng-container>
-      <ng-container matColumnDef="modeOfTransport">
-        <mat-header-cell *matHeaderCellDef class="mat-header"> Mode of Transport </mat-header-cell>
-        <mat-cell *matCellDef="let element" class="mat-cell">
-          {{ element.modeOfTransport }}
-        </mat-cell>
-      </ng-container>
-      <ng-container matColumnDef="price">
-        <mat-header-cell *matHeaderCellDef class="mat-header"> <i class="{{sign}}"></i> &nbsp; Price</mat-header-cell>
-        <mat-cell *matCellDef="let element" class="mat-cell"> {{ element.price }} </mat-cell>
-      </ng-container>
-      <ng-container matColumnDef="bookShipment">
-        <mat-header-cell *matHeaderCellDef></mat-header-cell>
-        <mat-cell *matCellDef="let element" class="mat-cell">
-          <div class="button-container">
-            <button class="card-button" (click)="bookOrder(element)">Book Shipment</button>
-          </div>
-        </mat-cell>
-      </ng-container>
-  
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns" class="mat-row"></mat-row>
-    </mat-table>
-    <mat-paginator [length]="dataSource.data.length" [pageSize]="pageSize" [pageIndex]="pageIndex" (page)="onPageChange($event)" class="mat-paginator"></mat-paginator>
-  </div>
+        <!-- pagination -->
+    </div>
+    <div class="table-container">
+        <mat-table [dataSource]="vendors" class="mat-table">
+            <ng-container matColumnDef="vendorId">
+                <mat-header-cell *matHeaderCellDef class="mat-header"> Vendor ID </mat-header-cell>
+                <mat-cell *matCellDef="let element" class="mat-cell">
+                    {{ element.vendorId }}
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="vendorName">
+                <mat-header-cell *matHeaderCellDef class="mat-header"> Vendor Name </mat-header-cell>
+                <mat-cell *matCellDef="let element" class="mat-cell">
+                    {{ element.vendorName }}
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="vendorContact">
+                <mat-header-cell *matHeaderCellDef class="mat-header"> Vendor Contact </mat-header-cell>
+                <mat-cell *matCellDef="let element" class="mat-cell">
+                    {{ element.vendorContact }}
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="modeOfTransport">
+                <mat-header-cell *matHeaderCellDef class="mat-header"> Mode of Transport </mat-header-cell>
+                <mat-cell *matCellDef="let element" class="mat-cell">
+                    {{ element.modeOfTransport }}
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="price">
+                <mat-header-cell *matHeaderCellDef class="mat-header"> <i class="{{sign}}"></i> &nbsp;
+                    Price</mat-header-cell>
+                <mat-cell *matCellDef="let element" class="mat-cell"> {{ element.price }} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="bookShipment">
+                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                <mat-cell *matCellDef="let element" class="mat-cell">
+                    <div class="button-container">
+                        <button class="card-button" (click)="bookOrder(element)">Book Shipment</button>
+                    </div>
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns" class="mat-row"></mat-row>
+        </mat-table>
+        <mat-paginator [length]="dataSource.data.length" [pageSize]="pageSize" [pageIndex]="pageIndex"
+            (page)="onPageChange($event)" class="mat-paginator"></mat-paginator>
+    </div>
 </div>

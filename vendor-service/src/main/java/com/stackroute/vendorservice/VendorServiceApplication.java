@@ -10,8 +10,6 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-import javax.servlet.annotation.MultipartConfig;
-
 @SpringBootApplication
 public class VendorServiceApplication {
 
@@ -46,10 +44,9 @@ public class VendorServiceApplication {
         filterRegistrationBean.addUrlPatterns("/api/vendor/addnameandcontact");
         filterRegistrationBean.addUrlPatterns("/api/vendor/getPrice");
         filterRegistrationBean.addUrlPatterns("/api/vendor/getvendor");
-        filterRegistrationBean.addUrlPatterns("/api/vendor/patchVendorDetails");
-        filterRegistrationBean.addUrlPatterns("/api/vendor/getInternationalPrice");
         filterRegistrationBean.addUrlPatterns("/api/vendor/getDomesticPrice");
-//        filterRegistrationBean.addUrlPatterns("/profileImage");
+        filterRegistrationBean.addUrlPatterns("/api/vendor/getInternationalPrice");
+        filterRegistrationBean.addUrlPatterns("/api/vendor/patchVendorDetails");
         return filterRegistrationBean;
     }
 }

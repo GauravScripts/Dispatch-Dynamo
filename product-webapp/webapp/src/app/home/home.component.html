@@ -1,9 +1,11 @@
-<app-nav></app-nav>
+<app-nav style="  width: 100% !important;
+  z-index: 1000;
+  position: fixed;"></app-nav>
 <div class="banner">
     <div class="banner-text">
         <h2 translate><span class="typed-element"></span></h2>
         <p translate>We provide top-notch logistics services to meet all your needs</p>
-        <button (click)="navigateToServices()" translate>Explore Services</button>
+        <button  translate>Explore Services</button>
     </div>
     <div class="banner-text">
 
@@ -26,7 +28,7 @@
             <img src="../../assets/6.jpg" alt="Road Transport" />
             <p translate>We provide reliable road transport services for all your goods and packages. Our fleet of vehicles is
                 equipped with state-of-the-art GPS systems to ensure safe and timely delivery of your shipments.</p>
-            <button (click)="navigateToRoadTransport()" translate>Learn More</button>
+            <button routerLink="/service" translate>Learn More</button>
         </div>
         <div class="card">
             <h3 translate>By Railway</h3>
@@ -35,7 +37,7 @@
                 a
                 team of experienced professionals who ensure smooth and hassle-free transportation of your shipments via
                 rail.</p>
-            <button (click)="navigateToRailwayTransport()" translate>Learn More</button>
+            <button routerLink="/service" translate>Learn More</button>
         </div>
         <div class="card">
             <h3 translate>By Air</h3>
@@ -44,7 +46,7 @@
                 services
                 are designed to provide a reliable and cost-effective solution for all your air transportation needs.
             </p>
-            <button (click)="navigateToAirTransport()" translate>Learn More</button>
+            <button routerLink="/service" translate>Learn More</button>
         </div>
     </div>
 </div>
@@ -97,34 +99,4 @@
     </div>
 </section>
 
-<footer>
-    <div class="footer-container">
-        <div class="footer-section">
-            <h3 translate>About Us</h3>
-            <p translate>We are a logistics company providing top-notch services to meet all your needs.</p>
-        </div>
-        <div class="footer-section">
-            <h3 translate>Contact Us</h3>
-            <p translate>Email: info@logistics.com</p>
-            <p translate>Phone: +1 (123) 456-7890</p>
-        </div>
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a routerLink="/services" translate>Services</a></li>
-                <li><a routerLink="/pricing" translate>Pricing</a></li>
-                <li><a routerLink="/about" translate>About Us</a></li>
-                <li><a routerLink="/contact" translate>Contact Us</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h3 translate>Follow Us</h3>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a>
-                <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://twitter.com/"><i class="fa-brands fa-square-twitter"></i></a>
-            </div>
-        </div>
-    </div>
-    <p class="copyright" translate>Copyright © Logistics Company 2023</p>
-</footer>
+<app-footer></app-footer>

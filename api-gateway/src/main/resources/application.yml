@@ -46,12 +46,12 @@ spring:
           filters:
             - RewritePath=/feedback-service(?<segment>/?.*), $\{segment}
 
-#        - id: MailServiceApp
-#          uri: http://localhost:8082
-#          predicates:
-#            - Path=/MailServiceApp/**
-#          filters:
-#            - RewritePath=/MailServiceApp(?<segment>/?.*), $\{segment}
+        #        - id: MailServiceApp
+        #          uri: http://localhost:8082
+        #          predicates:
+        #            - Path=/MailServiceApp/**
+        #          filters:
+        #            - RewritePath=/MailServiceApp(?<segment>/?.*), $\{segment}
 
         - id: Recommendation-Service
           uri: http://localhost:8081
@@ -83,8 +83,8 @@ spring:
             - RewritePath=/vendor-service(?<segment>/?.*), $\{segment}
 
         - id: product-webapp
-          uri: http://localhost:8099
+          uri: lb://product-webapp
           predicates:
             - Path=/**
           filters:
-            - RewritePath=(?<segment>/?.*), $\{segment}
+            - RewritePath=/product-webapp(?<segment>/?.*), $\{segment}

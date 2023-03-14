@@ -94,6 +94,8 @@ export class SignUpSignInComponent implements OnInit {
   otpvalidation:any;
   saveCustomer(data:any) {
     this.signupService.post(data).subscribe(() => {
+    let x = document.getElementsByClassName('login-form-area')[0] as HTMLElement;
+    x.click();
       this._snackBar.open('Congrats, you have submitted the form!!', 'success', {
         duration: 5000,
         panelClass: ['mat-toolbar', 'mat-primary'],});

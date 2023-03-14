@@ -12,7 +12,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 public class CityData {
     @Id
-    private String name;
+    private String _id;
     private Double lat;
     private Double lon;
+    private String _class;
 }

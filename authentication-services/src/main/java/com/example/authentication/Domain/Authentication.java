@@ -4,11 +4,11 @@ package com.example.authentication.Domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Table;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
+
 
 @Data
 @AllArgsConstructor

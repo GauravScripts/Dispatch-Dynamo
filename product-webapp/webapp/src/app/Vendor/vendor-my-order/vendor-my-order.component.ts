@@ -115,7 +115,7 @@ export class VendorMyOrderComponent {
                     // decoded.user_email
             )
             .subscribe((orders: order[]) => {
-                this.orders = orders;
+                this.orders = orders.reverse();
             });
     }
 

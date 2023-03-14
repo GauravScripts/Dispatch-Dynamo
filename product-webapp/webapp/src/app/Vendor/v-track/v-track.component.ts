@@ -35,7 +35,7 @@ export class VTrackComponent {
         this.vservice.getallshipments(this.search).subscribe(
             response=>{
                 this.shipments=response;
-                console.log(this.shipments);
+
             }
         )
     }

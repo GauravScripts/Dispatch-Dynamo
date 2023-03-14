@@ -15,7 +15,7 @@ import java.util.List;
 
 @RequestMapping
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class TrackingController {
 
 
@@ -31,7 +31,7 @@ public class TrackingController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<?> addDetails(@RequestBody CityData city) {
+    public ResponseEntity<?> addDetails(@RequestBody List<CityData> city) {
         return new ResponseEntity(trackingServices.addData(city), HttpStatus.OK);
     }
 

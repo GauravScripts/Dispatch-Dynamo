@@ -11,6 +11,23 @@ declare var Stripe: any;
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
+  notificationProps = {
+    title: 'Password expiring',
+    content: 'Your password is about to expire in n days.',
+    timeOut: 5000,
+    showProgressBar: true,
+    pauseOnHover: true,
+    clickToClose: true,
+    animate: 'fromRight',
+    preventDuplicates : true,
+    icons : 'alert'
+  };
+  create() {
+
+    const temp = this.notificationProps;
+    const title = temp.title;
+    const content = temp.content;
+  }
   paymentForm: FormGroup;
   cardTypes = ['Credit Card', 'Debit Card'];
   
@@ -35,17 +52,10 @@ export class PaymentComponent implements OnInit {
   get cvcControl() { return this.paymentForm.get('cvc'); }
 
   chargeCard(token: string) {
-    // this.http.post('http://localhost:9209/payment/charge123',token)
-    //   .subscribe(resp => {
-    //     console.log(resp);
-    //   })
-
     this.service.bookorder(this.service.getbookingdetails()).subscribe(data=>console.log(data))
+    this.create();
     alert("You Shipment is Successfully Booked Check Your mail for Tracking id And Shipment details")
-    this.route.navigateByUrl('usidenav');
-
-
-    
+    this.route.navigateByUrl('usidenav/userDashboard');
   }
 
  
@@ -70,4 +80,5 @@ export class PaymentComponent implements OnInit {
   clearForm() {
     this.paymentForm.reset();
   }
+
 }

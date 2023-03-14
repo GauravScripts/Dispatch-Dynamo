@@ -26,7 +26,6 @@ export class VServicesService {
       'Authorization': 'Bearer ' + localStorage.getItem('Token')
     });
     let requestOptions = { headers: httpHeaders }
-    console.log(requestOptions)
     return this.httpClient.post("http://localhost:8083/api/vendor/patchVendorDetails", updateVendorDetails,requestOptions)
   }
 
@@ -59,7 +58,6 @@ export class VServicesService {
       'Authorization': 'Bearer ' + localStorage.getItem('Token')
     });
     let requestOptions = { headers: httpHeaders }
-    console.log(requestOptions);
     return this.httpClient.post("http://localhost:8083/api/vendor/addprice", updateprice,requestOptions)
   }
 
@@ -79,7 +77,7 @@ export class VServicesService {
   }
 
   addImage(data: any) {
-    console.log(data);
+
     let email=localStorage.getItem('email')
     return this.httpClient.post("http://localhost:8083/profileImage/"+email,data);
   }

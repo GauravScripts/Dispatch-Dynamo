@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@1,500&display=swap');
+.navbar {
+
+  padding: 1rem 2rem;
+  background: #dba2f7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-brand {
+  /* font-size: 1.5rem;
+  font-weight: bold; */
+}
+
+.navbar-nav {
+  color: white;
+  display: flex;
+  align-items: center;
+  position:absolute;
+  right:2rem;
+}
+
+.nav-item {
+  padding: 0 1rem;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  // color: #282825 !important;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+
+
+.toggle {
+  display: none;
+}
+
+.toggle-label {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  overflow: hidden;
+}
+
+.sun,
+.moon {
+  position: absolute;
+  left: 0;
+  margin-top:10px;
+  margin-left:10px;
+  width: 70%;
+  height: auto;
+  transition: top 0.3s;
+}
+
+.sun {
+  top: 0;
+}
+
+.moon {
+  top: -150%;
+}
+
+.toggle:checked + .toggle-label .sun {
+  top: 150%;
+}
+
+.toggle:checked + .toggle-label .moon {
+  top: 0;
+}

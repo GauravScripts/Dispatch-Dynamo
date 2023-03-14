@@ -9,9 +9,9 @@
         [opened]="false"
     >
         <mat-toolbar style="background-color: #4d84e2">
-            <a class="navbar-brand" href="#" style="height: 50px; margin-left: 500px;">
-              <span style="font-family: 'Shantell Sans', cursive; font-size: 2rem; color: white">Menu</span>
-            </a>
+            <!-- <a class="navbar-brand">
+              <span>Hello, {{vendor.name}}</span>
+            </a> -->
         </mat-toolbar>
         <mat-nav-list>
             <a
@@ -74,7 +74,7 @@
                 <mat-icon class="icon">logout</mat-icon>
                 <span class="icons"> Logout</span>
             </a>
-            <a> </a>
+            
         </mat-nav-list>
     </mat-sidenav>
 
@@ -91,7 +91,7 @@
             >
                 <mat-icon
                     aria-label="Side nav toggle icon"
-                    style="color: #313638"
+                    style="color: #313638; cursor: pointer;"
                     >menu</mat-icon
                 >
             </button>
@@ -100,19 +100,91 @@
                 alt="DispatchDynamo Logo"
                 style="height: 50px;"
                 [routerLink]="['/vsidenav/vdashboard']"
-            />
+            /><span style="font-family: 'Shantell Sans', cursive; font-size: 2rem; margin-left: -472px">DispatchDynamo</span>
             <h1 style="font-family: 'Shantell Sans', cursive; font-size: 2rem; color: white; margin-right: 200px"></h1>
 
 
             <div id="navbar" (click)="logout()">
                 <mat-icon class="icon" style="color: #313638">logout</mat-icon>
                 <span class="icons" style="color: #313638"> Logout</span>
-                <!-- <button class="btn btn-dark" (click)="logout()">Logout</button> -->
+                
             </div>
         </mat-toolbar>
-        <!-- Add Content Here -->
+        
         <div class="container-fluid">
             <router-outlet> <div style="margin-top: 80px"></div></router-outlet>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
+
+
+<!-- 
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav 
+        style="background-color: #313638" #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="false">
+
+        <mat-toolbar style="background-color: #4d84e2">
+            <a class="navbar-brand" href="#" style="height: 50px; margin-left: 500px;">
+                <span style="font-family: 'Shantell Sans', cursive; font-size: 2rem; color: white">Hello, {{vendor.name}}</span>
+            </a>
+        </mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item [routerLink]="['/vsidenav/vdashboard']" (click)="drawer.toggle()">
+                <mat-icon class="icon">dashboard</mat-icon>
+                <span class="icons"> Vendor Dashboard</span>
+            </a>
+            <a mat-list-item [routerLink]="['/vsidenav/vorders']" (click)="drawer.toggle()">
+                <mat-icon class="icon">shopping_cart</mat-icon>
+                <span class="icons"> Orders Received</span>
+            </a>
+            <a mat-list-item [routerLink]="['/vsidenav/vcity']" (click)="drawer.toggle()">
+                <mat-icon>location_city</mat-icon>
+                <span class="icons"> Operational Facilities</span>
+            </a>
+            <a mat-list-item [routerLink]="['/vsidenav/vprofile']" (click)="drawer.toggle()">
+                <mat-icon> person_pin</mat-icon>
+                <span class="icons"> Vendor Profile</span>
+            </a>
+            <a mat-list-item [routerLink]="['/vsidenav/vtrack']" (click)="drawer.toggle()">
+                <mat-icon>track_changes</mat-icon>
+                <span class="icons"> Track Order</span>
+            </a>
+            <a mat-list-item [routerLink]="['/vsidenav/vupdateprice']" (click)="drawer.toggle()">
+                <mat-icon>price_change</mat-icon>
+                <span class="icons"> Transportational Costs </span>
+            </a>
+            <a mat-list-item [routerLink]="['/vsidenav/vsupport']" (click)="drawer.toggle()">
+                <mat-icon class="icon">support</mat-icon>
+                <span class="icons"> Support</span>
+            </a>
+            <a mat-list-item (click)="logout()">
+                <mat-icon class="icon">logout</mat-icon>
+                <span class="icons"> Logout</span>
+            </a>
+            <a> </a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <mat-toolbar class="sticky-toolbar" style="color: #fffffa; background-color: #4d84e2">
+            <button type="button" aria-label="Toggle sidenav" class="menu-stuff" (click)="drawer.toggle()">
+                <mat-icon aria-label="Side nav toggle icon" style="color: #313638">menu</mat-icon>
+            </button>
+            <img src="../../../assets/image-removebg-preview.png" alt="DispatchDynamo Logo"
+                style="height: 99px; display: block; margin: 0 auto" [routerLink]="['/vsidenav/vdashboard']" />
+            <div id="navbar" (click)="logout()">
+                <mat-icon class="icon" style="color: #313638">logout</mat-icon>
+                <span class="icons" style="color: #313638"> Logout</span>
+                
+            </div>
+        </mat-toolbar>
+       
+        <div class="container-fluid">
+            <router-outlet>
+                <div style="margin-top: 80px"></div>
+            </router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container> -->

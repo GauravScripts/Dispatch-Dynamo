@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
 import Typed from 'typed.js/src/typed.js';
+import {AuthService} from "../sign-up-sign-in/user-login-registration-service/auth.service";
+import jwt_decode from "jwt-decode";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -36,14 +38,35 @@ export class HomeComponent {
 
 
 
-    constructor(private _router: Router) { }
+    constructor(private _router: Router,
+  private authService:AuthService
+    ) { }
 
-  navigateToServices(){}
-  navigateToRoadTransport(){}
-  navigateToRailwayTransport(){}
-  navigateToAirTransport(){}
+ 
   getstarted(){
+    const token = this.authService.getToken();
+    if (token) {
+      const decoded: any = jwt_decode(token);
+      if (decoded.role === 'Vendor') {
+        this.authService.isLoggedIn = true;
+        this.authService.clear();
+        this.authService.setToken(token);
+        localStorage.setItem('email', decoded.email);
+        this._router.navigateByUrl('/vsidenav');
+      } else if (decoded.role === 'User') {
+        this.authService.isLoggedIn = true;
+        this.authService.clear();
+        this.authService.setToken(token);
+        localStorage.setItem('email', decoded.email);
+        this._router.navigateByUrl('/usidenav/userDashboard');
+      } else {
+
       this._router.navigate(['/getStarted']);
+      }
+    }
+    else{
+      this._router.navigate(['/getStarted']);
+    }
   }
   ngOnInit() {
     const options = {

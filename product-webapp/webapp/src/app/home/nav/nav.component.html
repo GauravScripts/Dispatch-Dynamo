@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-light" [ngClass]="{'navbar-dark': darkMode$ | async}" [ngStyle]="{'background-color': (darkMode$ | async) ? '#343a40' : '#4d84e2'}">
+    <a class="navbar-brand" href="#" style="height: 50px;">
+        <img src="../../assets/67-676440_automated-presales-delivery-automated-presales-delivery.png" alt="DispatchDynamo Logo" style="height: 48px; display: block; margin: 0 auto; padding-bottom: 5px;">
+    </a>
+    <span style="font-family: 'Shantell Sans', cursive; font-size: 2rem;">DispatchDynamo</span>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/" translate>Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/service" translate>Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/about" translate>About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/contact" translate>Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="userlogin()"><i class="fa-solid fa-user" style="cursor: pointer" matTooltip="SignIn or SignUp Here"></i></a>
+            </li>
+            <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Translate into other Language">
+                <i class="fa-solid fa-language"></i>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="switchLanguage('eng')">
+                    <span>English</span>
+                </button>
+                <button mat-menu-item (click)="switchLanguage('hin')">
+                    <span>Hindi</span>
+                </button>
+                <button mat-menu-item (click)="switchLanguage('mrthi')">
+                    <span>Marathi</span>
+                </button>
+                <button mat-menu-item (click)="switchLanguage('telugu')">
+                    <span>Telugu</span>
+                </button>
+                <button mat-menu-item (click)="switchLanguage('tamil')">
+                    <span>Tamil</span>
+                </button>
+            </mat-menu>
+            <input
+                    id="darkMode"
+                    type="checkbox"
+                    [checked]="darkMode$ | async"
+                    (change)="onToggle()"
+                    class="toggle"
+            />
+            <label class="toggle-label" for="darkMode" matTooltip="Change Appearance">
+                <img
+                        src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/moon.svg"
+                class="moon"
+                />
+                <img
+                        src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/sun.svg"
+                        class="sun"
+                />
+            </label>
+        </ul>
+
+    </div>
+</nav>

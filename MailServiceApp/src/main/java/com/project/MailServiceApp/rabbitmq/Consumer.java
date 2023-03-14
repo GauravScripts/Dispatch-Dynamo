@@ -16,7 +16,7 @@ public class Consumer {
     @RabbitListener(queues="Mail_Queue")
     public void sendMail(EmailDTO emailDTO)
     {
-        System.out.println(emailDTO);
+
         mailSender.send(emailDTO.getTo(),emailDTO.getSubject(),emailDTO.getMessage());
     }
 }

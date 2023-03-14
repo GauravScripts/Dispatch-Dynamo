@@ -2,17 +2,15 @@ package com.stackroute.vendorservice.controller;
 
 import com.stackroute.vendorservice.domain.ProfileImage;
 import com.stackroute.vendorservice.service.ProfileImageService;
-import com.stackroute.vendorservice.util.PhotoUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class ProfileImageController {
 
         @Autowired

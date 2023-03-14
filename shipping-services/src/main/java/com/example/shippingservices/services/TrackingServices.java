@@ -15,7 +15,7 @@ public interface TrackingServices {
 
 //    Double calculatePrice(Double weight, List<String> l2);
 
-    public CityData addData(CityData city);
+    public List<CityData> addData(List<CityData> city);
     public List<VendorModel> getVendors() throws IOException, InterruptedException;
     public List<VendorModel> filterVendorsbyCity(String city1 ,List<VendorModel> list1);
     public List<VendorModel> filteredCities(String city1 , String city2 ) throws IOException, InterruptedException;

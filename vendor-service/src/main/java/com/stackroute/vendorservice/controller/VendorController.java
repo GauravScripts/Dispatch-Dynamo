@@ -1,6 +1,9 @@
 package com.stackroute.vendorservice.controller;
 
-import com.stackroute.vendorservice.domain.*;
+import com.stackroute.vendorservice.domain.AddressModel;
+import com.stackroute.vendorservice.domain.UpdatePrice;
+import com.stackroute.vendorservice.domain.UpdatedData;
+import com.stackroute.vendorservice.domain.VendorModel;
 import com.stackroute.vendorservice.exception.UserNotFoundException;
 import com.stackroute.vendorservice.service.VendorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
 
-@CrossOrigin
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/vendor")
 public class VendorController {

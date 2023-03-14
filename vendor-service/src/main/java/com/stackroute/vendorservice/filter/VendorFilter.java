@@ -11,7 +11,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
 
 public class VendorFilter extends GenericFilterBean {
@@ -23,7 +22,7 @@ public class VendorFilter extends GenericFilterBean {
         // get authorization header from request object
 
         String authHeader = request.getHeader("authorization");
-        System.out.println(authHeader);
+
         // if authHeader is null || not bearer type : throw exception
         // else : verify the token, process request/dont process the request
         if(authHeader==null || !authHeader.startsWith("Bearer") ){

@@ -15,10 +15,10 @@ import { UserDashboardComponent } from "./user-components/user-dashboard/user-da
 import { AgmCoreModule } from "@agm/core";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { NavComponent } from "./nav/nav.component";
-import { AboutusComponent } from "./aboutus/aboutus.component";
+import { NavComponent } from "./home/nav/nav.component";
+import { AboutusComponent } from "./home/aboutus/aboutus.component";
 import { BookorderComponent } from "./bookorder/bookorder.component";
-import { ContactUsComponent } from "./contact-us/contact-us.component";
+import { ContactUsComponent } from "./home/contact-us/contact-us.component";
 import { UserProfileComponent } from "./user-components/user-profile/user-profile.component";
 import { MatIconModule } from "@angular/material/icon";
 import { HomeComponent } from "./home/home.component";
@@ -63,20 +63,20 @@ import { VendorMyOrderComponent } from "./Vendor/vendor-my-order/vendor-my-order
 import { StatusDialogComponent } from "./Vendor/vendor-my-order/status-dialog/status-dialog.component";
 import { OrderInfoDialogComponent } from './Vendor/vendor-my-order/order-info-dialog/order-info-dialog.component';
 import { UserProductRegoniseComponent } from './user-components/user-product-regonise/user-product-regonise.component';
-import {environment} from "../environments/environment";
-import {
-    ClassifierCameraComponent
-} from "./user-components/user-product-regonise/classifier-camera/classifier-camera.component";
-import {
-    ClassifierUploadComponent
-} from "./user-components/user-product-regonise/classifier-upload/classifier-upload.component";
+import { environment } from "../environments/environment";
+import { ClassifierCameraComponent } from "./user-components/user-product-regonise/classifier-camera/classifier-camera.component";
+import { ClassifierUploadComponent } from "./user-components/user-product-regonise/classifier-upload/classifier-upload.component";
 
 export function translateHttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
 }
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { ServiceWorkerModule } from "@angular/service-worker";
-import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+import { FooterComponent } from './home/footer/footer.component';
+import { ServiceComponent } from "./home/service/service.component";
+
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -113,7 +113,9 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
         ClassifierCameraComponent,
         ClassifierUploadComponent,
         VSidenavComponent,
-        VProfileComponent
+        VProfileComponent,
+        FooterComponent,
+        ServiceComponent,
     ],
     providers: [
         {
@@ -171,9 +173,9 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
         MatMenuModule,
         NgImageSliderModule,
         NgAisModule.forRoot(),
-        ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
         MatSlideToggleModule,
 
     ],
 })
-export class AppModule {}
+export class AppModule { }

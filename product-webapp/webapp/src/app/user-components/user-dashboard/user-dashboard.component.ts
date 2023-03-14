@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Component } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
+import { VServicesService } from "src/app/Vendor/v-services.service";
 // import { Chart } from "chart.js";
 
 @Component({
@@ -10,7 +11,8 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 })
 export class UserDashboardComponent {
     beRecommendationAppBaseUrl="http://localhost:8081/api/neo4j";
-    constructor(private http:HttpClient)
+    imageUrl = 'https://bootdey.com/img/Content/avatar/avatar7.png';
+    constructor(private http: HttpClient, private V_service:VServicesService)
     {
 this.getusercity()
     }
@@ -33,5 +35,7 @@ getallvendors(p:any)
 
 this.http.get("http://localhost:8083/api/vendor/filteredVendorByCity/"+p).subscribe(data=>this.searchcities=data);
 }
+
+
 
 }

@@ -125,6 +125,7 @@ export class VProfileComponent  {
 
   deleteImage(){
     this.V_service.deleteImage().subscribe({ next: data => this.deleteImagesnack() });
+    window.location.reload(); 
   }
 
   deleteImagesnack(){

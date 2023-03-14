@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/v1/feedback")
+@CrossOrigin(origins = "*")
 public class FeedbackController {
     @Autowired
     FeedbackService feedbackServiceI;

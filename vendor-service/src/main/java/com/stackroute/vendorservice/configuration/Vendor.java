@@ -1,12 +1,13 @@
 package com.stackroute.vendorservice.configuration;
 
-import com.stackroute.vendorservice.domain.*;
+import com.stackroute.vendorservice.domain.Price;
+import com.stackroute.vendorservice.domain.TransportModel;
+import com.stackroute.vendorservice.domain.TransportModelInternational;
+import com.stackroute.vendorservice.domain.VendorModel;
 import com.stackroute.vendorservice.service.VendorServiceImpl;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.Collections;
 
 @Component
 public class Vendor {
