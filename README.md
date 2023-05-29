@@ -14,8 +14,6 @@ Error: node_modules/@tensorflow/tfjs-core/dist/hash_util.d.ts:5:69 - error TS230
 https://s10.gifyu.com/images/homedf4c4bab03fd9fc4.gif
 <hr>
 
-https://s10.gifyu.com/images/homedf4c4bab03fd9fc4.gif
-<hr>
 
 https://s10.gifyu.com/images/Video_230314132832.gif
 <hr>
